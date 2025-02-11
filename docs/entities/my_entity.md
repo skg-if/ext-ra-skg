@@ -1,6 +1,6 @@
 ---
 title: My entity
-parent: Extension entities
+parent: RA-SKG entities
 layout: default
 # nav_order: 1
 ---

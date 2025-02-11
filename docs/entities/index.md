@@ -1,5 +1,5 @@
 ---
-title: RA-SKG extension entities
+title: RA-SKG entities
 parent: RA-SKG extension
 layout: default
 nav_order: 2
