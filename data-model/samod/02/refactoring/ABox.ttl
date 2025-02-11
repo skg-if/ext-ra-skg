@@ -1,0 +1,90 @@
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://purl.org/spar/literal/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix pso: <http://purl.org/spar/pso/> .
+@prefix scoro: <http://purl.org/spar/scoro/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/skg-if/ontology/data/02/> a owl:Ontology ;
+    owl:imports <https://example.org/skg-if/extention/02/schema/> .
+
+<https://w3id.org/skg-if/ontology/data/02/article-1> a fabio:Work ;
+    dcterms:title "When Operation Technology Meets Information Technology: Challenges and Opportunities"@en ;
+    datacite:hasIdentifier [ datacite:usesIdentifierScheme datacite:doi ;
+            literal:hasLiteralValue "https://doi.org/10.3390/fi15030095" ] ;
+    pro:isRelatedToRoleInTime [ pro:relatesToOrganization <https://w3id.org/skg-if/ontology/data/02/university-of-bologna> ;
+            pro:withRole scoro:affiliate ] ;
+    frbr:realization [ a fabio:JournalArticle ;
+            dcterms:issued "2023-01-01T00:00:00+00:00"^^xsd:dateTime ;
+            pso:holdsStatusInTime [ pso:withStatus pso:gold-open-access ] ] .
+
+<https://w3id.org/skg-if/ontology/data/02/article-2> a fabio:Work ;
+    dcterms:title "Cascaded Rectifiers for Energy Harvesting With a Wide Dynamic Power Range"@en ;
+    datacite:hasIdentifier [ datacite:usesIdentifierScheme datacite:doi ;
+            literal:hasLiteralValue "https://doi.org/10.1109/JRFID.2023.3234805" ],
+        [ datacite:usesIdentifierScheme datacite:doi ;
+            literal:hasLiteralValue "https://cris.unibo.it/handle/11585/916843" ] ;
+    pro:isRelatedToRoleInTime [ pro:relatesToOrganization <https://w3id.org/skg-if/ontology/data/02/university-of-bologna> ;
+            pro:withRole scoro:affiliate ] ;
+    frbr:realization [ a fabio:JournalArticle ;
+            dcterms:issued "2023-01-01T00:00:00+00:00"^^xsd:dateTime ;
+            pso:holdsStatusInTime [ pso:withStatus pso:green-open-access ] ] .
+
+<https://w3id.org/skg-if/ontology/data/02/dataset-1> a fabio:Dataset ;
+    dcterms:title "Dataset to run the NeuralFRG software for the t-t' Hubbard model on the square lattice. Phys. Rev. Lett. 129, 136402 (2022)"@en ;
+    datacite:hasIdentifier [ datacite:usesIdentifierScheme datacite:doi ;
+            literal:hasLiteralValue "https://doi.org/10.5281/zenodo.7626636" ] ;
+    pro:isRelatedToRoleInTime [ pro:relatesToOrganization <https://w3id.org/skg-if/ontology/data/02/university-of-bologna> ;
+            pro:withRole scoro:affiliate ] ;
+    frbr:realization [ a fabio:Expression ;
+            dcterms:issued "2023-01-01T00:00:00+00:00"^^xsd:dateTime ] .
+
+<https://w3id.org/skg-if/ontology/data/02/dataset-2> a fabio:Dataset ;
+    dcterms:title "Data from the article 'Supplemental LED Lighting Improves Fruit Growth and Yield of Tomato Grown under the Sub-Optimal Lighting Condition of a Building Integrated Rooftop Greenhouse (i-RTG)'"@en ;
+    datacite:hasIdentifier [ datacite:usesIdentifierScheme datacite:doi ;
+            literal:hasLiteralValue "https://doi.org/10.6092/unibo%2Famsacta%2F7601" ] ;
+    pro:isRelatedToRoleInTime [ pro:relatesToOrganization <https://w3id.org/skg-if/ontology/data/02/university-of-bologna> ;
+            pro:withRole scoro:affiliate ] ;
+    frbr:realization [ a fabio:Expression ;
+            dcterms:issued "2022-01-01T00:00:00+00:00"^^xsd:dateTime ] .
+
+<https://w3id.org/skg-if/ontology/data/02/preprint-1> a fabio:Work ;
+    dcterms:title "Approaching Digital Humanities at the University: a Cultural Challenge"@en ;
+    datacite:hasIdentifier [ datacite:usesIdentifierScheme datacite:doi ;
+            literal:hasLiteralValue "https://doi.org/10.48550/arxiv.2209.06091" ] ;
+    pro:isRelatedToRoleInTime [ pro:relatesToOrganization <https://w3id.org/skg-if/ontology/data/02/university-of-bologna> ;
+            pro:withRole scoro:affiliate ] ;
+    frbr:realization [ a fabio:Preprint ;
+            dcterms:issued "2022-01-01T00:00:00+00:00"^^xsd:dateTime ;
+            dcat:accessService [ foaf:name "arXiv" ] ] .
+
+<https://w3id.org/skg-if/ontology/data/02/preprint-2> a fabio:Work ;
+    dcterms:title "Performing live time-traversal queries via SPARQL on RDF datasets"@en ;
+    datacite:hasIdentifier [ datacite:usesIdentifierScheme datacite:doi ;
+            literal:hasLiteralValue "https://doi.org/10.1109/JRFID.2023.3234805" ],
+        [ datacite:usesIdentifierScheme datacite:doi ;
+            literal:hasLiteralValue "https://doi.org/10.48550/arxiv.2210.02534" ] ;
+    pro:isRelatedToRoleInTime [ pro:relatesToOrganization <https://w3id.org/skg-if/ontology/data/02/university-of-bologna> ;
+            pro:withRole scoro:affiliate ] ;
+    frbr:realization [ a fabio:Preprint ;
+            dcterms:issued "2022-01-01T00:00:00+00:00"^^xsd:dateTime ;
+            dcat:accessService [ foaf:name "arXiv" ] ] .
+
+fabio:JournalArticle skos:inScheme <https://example.org/skg-if/extention/02/schema> ;
+    skos:prefLabel "journal article"@en .
+
+fabio:Preprint skos:inScheme <https://example.org/skg-if/extention/02/schema> ;
+    skos:prefLabel "preprint"@en .
+
+<https://w3id.org/skg-if/ontology/data/02/university-of-bologna> a foaf:Organization ;
+    datacite:hasIdentifier [ datacite:usesIdentifierScheme datacite:ror ;
+            literal:hasLiteralValue "https://ror.org/01111rn36" ] ;
+    foaf:name "University of Bologna"@en .
+

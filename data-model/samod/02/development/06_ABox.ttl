@@ -1,0 +1,132 @@
+@prefix : <https://example.org/skg-if/extention/02/data/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tbox: <https://example.org/skg-if/extention/02/schema/> .
+@base <https://example.org/skg-if/extention/02/data/> .
+
+<https://example.org/skg-if/extention/02/data/> rdf:type owl:Ontology ;
+                                                        owl:imports <https://example.org/skg-if/extention/02/schema/> .
+
+:university-of-bologna a tbox:Organization ;
+    tbox:name "University of Bologna"@en ;
+    tbox:hasIdentifier [ 
+        tbox:hasLiteralValue "https://ror.org/01111rn36" ;
+        tbox:usesIdentifierScheme tbox:ror 
+    ] .
+
+:article-1 a tbox:Work ;
+    tbox:title "When Operation Technology Meets Information Technology: Challenges and Opportunities"@en ;
+    tbox:hasIdentifier [ 
+        tbox:hasLiteralValue "https://doi.org/10.3390/fi15030095" ;
+        tbox:usesIdentifierScheme tbox:doi 
+    ] ;
+    tbox:isRelatedToRoleInTime [ 
+        tbox:withRole tbox:affiliate ;
+        tbox:relatesToOrganization :university-of-bologna 
+    ] ;
+    tbox:realization [ 
+        a tbox:JournalArticle ;
+        tbox:issued "2023-01-01T00:00:00+00:00"^^xsd:dateTime ;
+        tbox:holdsStatusInTime [ 
+            tbox:withStatus tbox:gold-open-access 
+        ]
+    ] .
+
+:article-2 a tbox:Work ;
+    tbox:title "Cascaded Rectifiers for Energy Harvesting With a Wide Dynamic Power Range"@en ;
+    tbox:hasIdentifier [ 
+        tbox:hasLiteralValue "https://doi.org/10.1109/JRFID.2023.3234805" ;
+        tbox:usesIdentifierScheme tbox:doi 
+    ], [ 
+        tbox:hasLiteralValue "https://cris.unibo.it/handle/11585/916843" ;
+        tbox:usesIdentifierScheme tbox:doi 
+    ] ;
+    tbox:isRelatedToRoleInTime [ 
+        tbox:withRole tbox:affiliate ;
+        tbox:relatesToOrganization :university-of-bologna 
+    ] ;
+    tbox:realization [ 
+        a tbox:JournalArticle ;
+        tbox:issued "2023-01-01T00:00:00+00:00"^^xsd:dateTime ;
+        tbox:holdsStatusInTime [ 
+            tbox:withStatus tbox:green-open-access 
+        ]
+    ] .
+
+:dataset-1 a tbox:Dataset ;
+    tbox:title "Dataset to run the NeuralFRG software for the t-t' Hubbard model on the square lattice. Phys. Rev. Lett. 129, 136402 (2022)"@en ;
+    tbox:hasIdentifier [ 
+        tbox:hasLiteralValue "https://doi.org/10.5281/zenodo.7626636" ;
+        tbox:usesIdentifierScheme tbox:doi 
+    ] ;
+    tbox:isRelatedToRoleInTime [ 
+        tbox:withRole tbox:affiliate ;
+        tbox:relatesToOrganization :university-of-bologna 
+    ] ;
+    tbox:realization [ 
+        a tbox:Expression ;
+        tbox:issued "2023-01-01T00:00:00+00:00"^^xsd:dateTime 
+    ] .
+
+:dataset-2 a tbox:Dataset ;
+    tbox:title "Data from the article 'Supplemental LED Lighting Improves Fruit Growth and Yield of Tomato Grown under the Sub-Optimal Lighting Condition of a Building Integrated Rooftop Greenhouse (i-RTG)'"@en ;
+    tbox:hasIdentifier [ 
+        tbox:hasLiteralValue "https://doi.org/10.6092/unibo%2Famsacta%2F7601" ;
+        tbox:usesIdentifierScheme tbox:doi 
+    ] ;
+    tbox:isRelatedToRoleInTime [ 
+        tbox:withRole tbox:affiliate ;
+        tbox:relatesToOrganization :university-of-bologna 
+    ] ;
+    tbox:realization [ 
+        a tbox:Expression ;
+        tbox:issued "2022-01-01T00:00:00+00:00"^^xsd:dateTime 
+    ] .
+
+:preprint-1 a tbox:Work ;
+    tbox:title "Approaching Digital Humanities at the University: a Cultural Challenge"@en ;
+    tbox:hasIdentifier [ 
+        tbox:hasLiteralValue "https://doi.org/10.48550/arxiv.2209.06091" ;
+        tbox:usesIdentifierScheme tbox:doi 
+    ] ;
+    tbox:isRelatedToRoleInTime [ 
+        tbox:withRole tbox:affiliate ;
+        tbox:relatesToOrganization :university-of-bologna 
+    ] ;
+    tbox:realization [ 
+        a tbox:Preprint ;
+        tbox:issued "2022-01-01T00:00:00+00:00"^^xsd:dateTime ;
+        tbox:accessService [
+            tbox:name "arXiv"
+        ]
+    ] .
+
+:preprint-2 a tbox:Work ;
+    tbox:title "Performing live time-traversal queries via SPARQL on RDF datasets"@en ;
+    tbox:hasIdentifier [ 
+        tbox:hasLiteralValue "https://doi.org/10.1109/JRFID.2023.3234805" ;
+        tbox:usesIdentifierScheme tbox:doi 
+    ], [ 
+        tbox:hasLiteralValue "https://doi.org/10.48550/arxiv.2210.02534" ;
+        tbox:usesIdentifierScheme tbox:doi 
+    ] ;
+    tbox:isRelatedToRoleInTime [ 
+        tbox:withRole tbox:affiliate ;
+        tbox:relatesToOrganization :university-of-bologna 
+    ] ;
+    tbox:realization [ 
+        a tbox:Preprint ;
+        tbox:issued "2022-01-01T00:00:00+00:00"^^xsd:dateTime ;
+        tbox:accessService [
+            tbox:name "arXiv"
+        ]
+    ] .
+
+tbox:JournalArticle tbox:inScheme <https://example.org/skg-if/extention/02/schema> ;
+    tbox:prefLabel "journal article"@en .
+
+tbox:Preprint tbox:inScheme <https://example.org/skg-if/extention/02/schema> ;
+    tbox:prefLabel "preprint"@en .

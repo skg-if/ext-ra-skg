@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>The SKG-IF Ontology: indicators</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/skg-if/ontology/","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/skg-if/ontology/","name":"The SKG-IF Ontology: indicators", "headline":"Document describing the ontology https://w3id.org/skg-if/ontology/", "dateReleased":"Mon Feb 10 11:25:50 CET 2025", "version":"1.0.1", "author":[{"@type":"Person","name":"Scientific Knowledge Graphs – Interoperability Framework (SKG-IF) WG"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>The SKG-IF Ontology: indicators</h1>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="https://w3id.org/skg-if/ontology/indicators/1.0.1/">https://w3id.org/skg-if/ontology/indicators/1.0.1/</a></dd>
+<dt>Latest version:</dt>
+<dd><a href="https://w3id.org/skg-if/ontology/">https://w3id.org/skg-if/ontology/</a></dd>
+<dt>Revision:</dt>
+<dd>1.0.1</dd>
+<dt>Authors:</dt>
+<dd>Scientific Knowledge Graphs – Interoperability Framework (SKG-IF) WG</dd>
+
+<dt>Download serialization:</dt><dd><span><a href="skg-o.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="skg-o.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="skg-o.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="skg-o.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://insertlicenseURIhere.example.org" target="_blank"><img src="https://img.shields.io/badge/License-This%20work%20is%20distributed%20under%20a%20Creative%20Commons%20Attribution%20License%20(https://creativecommons.org/licenses/by/4.0/legalcode)-blue.svg" alt="http://insertlicenseURIhere.example.org" /></a>
+</dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Scientific Knowledge Graphs – Interoperability Framework (SKG-IF) WG. The SKG-IF Ontology: indicators. Revision: 1.0.1. Retrieved from: https://w3id.org/skg-if/ontology/indicators/1.0.1/</dd>
+</dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div><div id="toc"></div>  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">SKG-O: indicators: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://purl.org/spar/datacite/Identifier" title="http://purl.org/spar/datacite/Identifier">datacite:Identifier</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/datacite/IdentifierScheme" title="http://purl.org/spar/datacite/IdentifierScheme">datacite:IdentifierScheme</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#DataService" title="http://www.w3.org/ns/dcat#DataService">dcat:DataService (SKG-IF labels: Data source)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/fabio/Dataset" title="http://purl.org/spar/fabio/Dataset">fabio:Dataset (SKG-IF labels: research data)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/fabio/Expression" title="http://purl.org/spar/fabio/Expression">fabio:Expression</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/fabio/JournalArticle" title="http://purl.org/spar/fabio/JournalArticle">fabio:JournalArticle</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/fabio/Preprint" title="http://purl.org/spar/fabio/Preprint">fabio:Preprint</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/fabio/Work" title="http://purl.org/spar/fabio/Work">fabio:Work (SKG-IF labels: Research product)</a>
+   </li>
+   <li>
+      <a href="#http://xmlns.com/foaf/0.1/Organization" title="http://xmlns.com/foaf/0.1/Organization">foaf:Organization</a>
+   </li>
+   <li>
+      <a href="#http://xmlns.com/foaf/0.1/Person" title="http://xmlns.com/foaf/0.1/Person">foaf:Person</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/pro/Role" title="http://purl.org/spar/pro/Role">pro:Role</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/pro/RoleInTime" title="http://purl.org/spar/pro/RoleInTime">pro:RoleInTime</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/pso/PublicationStatus" title="http://purl.org/spar/pso/PublicationStatus">pso:PublicationStatus</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/pso/StatusInTime" title="http://purl.org/spar/pso/StatusInTime">pso:StatusInTime</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#Concept" title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#ConceptScheme"
+         title="http://www.w3.org/2004/02/skos/core#ConceptScheme">skos:ConceptScheme</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://purl.org/spar/datacite/hasIdentifier" title="http://purl.org/spar/datacite/hasIdentifier">datacite:hasIdentifier (SKG-IF labels: identifiers)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/datacite/usesIdentifierScheme"
+         title="http://purl.org/spar/datacite/usesIdentifierScheme">datacite:usesIdentifierScheme (SKG-IF labels: scheme)</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/dcat#accessService" title="http://www.w3.org/ns/dcat#accessService">dcat:accessService (SKG-IF labels: hosting_data_source)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/relation" title="http://purl.org/dc/terms/relation">dcterms:relation</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/vocab/frbr/core#realization" title="http://purl.org/vocab/frbr/core#realization">frbr:realization (SKG-IF labels: manifestations)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/pro/holdsRoleInTime" title="http://purl.org/spar/pro/holdsRoleInTime">pro:holdsRoleInTime (SKG-IF labels: affiliations)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/pro/relatesToOrganization" title="http://purl.org/spar/pro/relatesToOrganization">pro:relatesToOrganization (SKG-IF labels: declared_affiliations)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/pro/withRole" title="http://purl.org/spar/pro/withRole">pro:withRole (SKG-IF labels: role)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/pso/holdsStatusInTime" title="http://purl.org/spar/pso/holdsStatusInTime">pso:holdsStatusInTime (SKG-IF labels: )</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/pso/withStatus" title="http://purl.org/spar/pso/withStatus">pso:withStatus (SKG-IF labels: status)</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#inScheme" title="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme (SKG-IF labels: defined_in)</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://purl.org/dc/terms/issued" title="http://purl.org/dc/terms/issued">dcterms:issued (SKG-IF labels: publication)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title">dcterms:title (SKG-IF labels: titles)</a>
+   </li>
+   <li>
+      <a href="#http://xmlns.com/foaf/0.1/name" title="http://xmlns.com/foaf/0.1/name">foaf:name (SKG-IF labels: name)</a>
+   </li>
+   <li>
+      <a href="#http://www.essepuntato.it/2010/06/literalreification/hasLiteralValue"
+         title="http://www.essepuntato.it/2010/06/literalreification/hasLiteralValue">literal:hasLiteralValue (SKG-IF labels: value)</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#prefLabel" title="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel (SKG-IF labels: labels)</a>
+   </li>
+</ul><h4>Named Individuals</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://purl.org/spar/datacite/doi" title="http://purl.org/spar/datacite/doi">datacite:doi (SKG-IF labels: doi)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/datacite/ror" title="http://purl.org/spar/datacite/ror">datacite:ror (SKG-IF labels: ror)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/pso/gold-open-access" title="http://purl.org/spar/pso/gold-open-access">pso:gold-open-access (SKG-IF labels: Gold Open Access)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/pso/gratis-open-access" title="http://purl.org/spar/pso/gratis-open-access">pso:gratis-open-access (SKG-IF labels: Diamond Open Access)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/pso/green-open-access" title="http://purl.org/spar/pso/green-open-access">pso:green-open-access (SKG-IF labels: Green Open Access)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/scoro/affiliate" title="http://purl.org/spar/scoro/affiliate">scoro:affiliate (SKG-IF labels: affiliate)</a>
+   </li>
+</ul>
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">SKG-O: indicators: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">SKG-O, the SKG-IF Ontology, is not yet another bibliographic ontology. Rather it is just a place where existing and complementary ontological entities from several other ontologies, all employed in the Scientific Knowledge Graph Interoperability Framework (SKG-IF), are grouped together for the purpose of providing descriptive metadata compliant with the SKG-IF Data Model.</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for SKG-O: indicators classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by SKG-O: indicators.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#http://purl.org/spar/datacite/Identifier" title="http://purl.org/spar/datacite/Identifier">datacite:Identifier</a></li>
+  <li><a href="#http://purl.org/spar/datacite/IdentifierScheme" title="http://purl.org/spar/datacite/IdentifierScheme">datacite:IdentifierScheme</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#DataService" title="http://www.w3.org/ns/dcat#DataService">dcat:DataService (SKG-IF labels: Data source)</a></li>
+  <li><a href="#http://purl.org/spar/fabio/Dataset" title="http://purl.org/spar/fabio/Dataset">fabio:Dataset (SKG-IF labels: research data)</a></li>
+  <li><a href="#http://purl.org/spar/fabio/Expression" title="http://purl.org/spar/fabio/Expression">fabio:Expression</a></li>
+  <li><a href="#http://purl.org/spar/fabio/JournalArticle" title="http://purl.org/spar/fabio/JournalArticle">fabio:JournalArticle</a></li>
+  <li><a href="#http://purl.org/spar/fabio/Preprint" title="http://purl.org/spar/fabio/Preprint">fabio:Preprint</a></li>
+  <li><a href="#http://purl.org/spar/fabio/Work" title="http://purl.org/spar/fabio/Work">fabio:Work (SKG-IF labels: Research product)</a></li>
+  <li><a href="#http://xmlns.com/foaf/0.1/Organization" title="http://xmlns.com/foaf/0.1/Organization">foaf:Organization</a></li>
+  <li><a href="#http://xmlns.com/foaf/0.1/Person" title="http://xmlns.com/foaf/0.1/Person">foaf:Person</a></li>
+  <li><a href="#http://purl.org/spar/pro/Role" title="http://purl.org/spar/pro/Role">pro:Role</a></li>
+  <li><a href="#http://purl.org/spar/pro/RoleInTime" title="http://purl.org/spar/pro/RoleInTime">pro:RoleInTime</a></li>
+  <li><a href="#http://purl.org/spar/pso/PublicationStatus" title="http://purl.org/spar/pso/PublicationStatus">pso:PublicationStatus</a></li>
+  <li><a href="#http://purl.org/spar/pso/StatusInTime" title="http://purl.org/spar/pso/StatusInTime">pso:StatusInTime</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#Concept" title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#ConceptScheme" title="http://www.w3.org/2004/02/skos/core#ConceptScheme">skos:ConceptScheme</a></li>
+ </ul>
+ <div class="entity" id="http://purl.org/spar/datacite/Identifier">
+  <h3>datacite:Identifier<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/datacite/Identifier</p>
+  <div class="info">
+   <span class="markdown">The properties that can be used with this class are: * datacite:usesIdentifierScheme -[1]-&gt; datacite:IdentifierScheme * literal:hasLiteralValue -[1]-&gt; rdfs:Literal</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/datacite/">http://purl.org/spar/datacite/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/datacite/IdentifierScheme">
+  <h3>datacite:IdentifierScheme<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/datacite/IdentifierScheme</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/datacite/">http://purl.org/spar/datacite/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#DataService">
+  <h3>dcat:DataService (SKG-IF labels: Data source)<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#DataService</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/dcat#">http://www.w3.org/ns/dcat#</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/fabio/Dataset">
+  <h3>fabio:Dataset (SKG-IF labels: research data)<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/fabio/Dataset</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/fabio/">http://purl.org/spar/fabio/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/fabio/Expression">
+  <h3>fabio:Expression<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/fabio/Expression</p>
+  <div class="info">
+   <span class="markdown">The properties that can be used with this class are: * dcat:accessService -[0..1]-&gt; dcat:DataService * dcterms:issued -[0..N]-&gt; xsd:dateTime * pso:holdsStatusInTime -[0..N]-&gt; pso:StatusInTime * rdf:type -[0..1]-&gt; skos:Concept</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/fabio/">http://purl.org/spar/fabio/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/fabio/JournalArticle">
+  <h3>fabio:JournalArticle<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/fabio/JournalArticle</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/fabio/">http://purl.org/spar/fabio/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/fabio/Preprint">
+  <h3>fabio:Preprint<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/fabio/Preprint</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/fabio/">http://purl.org/spar/fabio/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/fabio/Work">
+  <h3>fabio:Work (SKG-IF labels: Research product)<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/fabio/Work</p>
+  <div class="comment">
+   <span class="markdown">Research products may be of four types: research literature, research data, research software, or other.</span>
+  </div>
+  <div class="info">
+   <span class="markdown">The properties that can be used with this class are: * datacite:hasIdentifier -[0..N]-&gt; datacite:Identifier * dcterms:title -[0..N]-&gt; rdfs:Literal * frbr:realization -[0..N]-&gt; fabio:Expression</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/fabio/">http://purl.org/spar/fabio/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://xmlns.com/foaf/0.1/Organization">
+  <h3>foaf:Organization<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/Organization</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/">http://xmlns.com/foaf/0.1/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://xmlns.com/foaf/0.1/Person">
+  <h3>foaf:Person<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/Person</p>
+  <div class="info">
+   <span class="markdown">The properties that can be used with this class are: * pro:holdsRoleInTime -[0..N]-&gt; pro:RoleInTime</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/">http://xmlns.com/foaf/0.1/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/pro/Role">
+  <h3>pro:Role<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/pro/Role</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/pro/">http://purl.org/spar/pro/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/pro/RoleInTime">
+  <h3>pro:RoleInTime<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/pro/RoleInTime</p>
+  <div class="info">
+   <span class="markdown">The properties that can be used with this class are: * pro:relatesToOrganization -[0..N]-&gt; foaf:Organization * pro:withRole -[0..1]-&gt; pro:Role</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/pro/">http://purl.org/spar/pro/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/pso/PublicationStatus">
+  <h3>pso:PublicationStatus<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/pso/PublicationStatus</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/pso/">http://purl.org/spar/pso/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/pso/StatusInTime">
+  <h3>pso:StatusInTime<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/pso/StatusInTime</p>
+  <div class="info">
+   <span class="markdown">The properties that can be used with this class are: * pso:withStatus -[1]-&gt; pso:PublicationStatus</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/pso/">http://purl.org/spar/pso/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#Concept">
+  <h3>skos:Concept<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#Concept</p>
+  <div class="info">
+   <span class="markdown">The properties that can be used with this class are: * skos:inScheme -[0..1]-&gt; skos:ConceptScheme * skos:prefLabel -[0..N]-&gt; rdfs:Literal</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#">http://www.w3.org/2004/02/skos/core#</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+  <h3>skos:ConceptScheme<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#ConceptScheme</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#">http://www.w3.org/2004/02/skos/core#</a>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://purl.org/spar/datacite/hasIdentifier" title="http://purl.org/spar/datacite/hasIdentifier">datacite:hasIdentifier (SKG-IF labels: identifiers)</a></li>
+  <li><a href="#http://purl.org/spar/datacite/usesIdentifierScheme" title="http://purl.org/spar/datacite/usesIdentifierScheme">datacite:usesIdentifierScheme (SKG-IF labels: scheme)</a></li>
+  <li><a href="#http://www.w3.org/ns/dcat#accessService" title="http://www.w3.org/ns/dcat#accessService">dcat:accessService (SKG-IF labels: hosting_data_source)</a></li>
+  <li><a href="#http://purl.org/dc/terms/relation" title="http://purl.org/dc/terms/relation">dcterms:relation</a></li>
+  <li><a href="#http://purl.org/vocab/frbr/core#realization" title="http://purl.org/vocab/frbr/core#realization">frbr:realization (SKG-IF labels: manifestations)</a></li>
+  <li><a href="#http://purl.org/spar/pro/holdsRoleInTime" title="http://purl.org/spar/pro/holdsRoleInTime">pro:holdsRoleInTime (SKG-IF labels: affiliations)</a></li>
+  <li><a href="#http://purl.org/spar/pro/relatesToOrganization" title="http://purl.org/spar/pro/relatesToOrganization">pro:relatesToOrganization (SKG-IF labels: declared_affiliations)</a></li>
+  <li><a href="#http://purl.org/spar/pro/withRole" title="http://purl.org/spar/pro/withRole">pro:withRole (SKG-IF labels: role)</a></li>
+  <li><a href="#http://purl.org/spar/pso/holdsStatusInTime" title="http://purl.org/spar/pso/holdsStatusInTime">pso:holdsStatusInTime (SKG-IF labels: )</a></li>
+  <li><a href="#http://purl.org/spar/pso/withStatus" title="http://purl.org/spar/pso/withStatus">pso:withStatus (SKG-IF labels: status)</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#inScheme" title="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme (SKG-IF labels: defined_in)</a></li>
+ </ul>
+ <div class="entity" id="http://purl.org/spar/datacite/hasIdentifier">
+  <h3>datacite:hasIdentifier (SKG-IF labels: identifiers)<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/datacite/hasIdentifier</p>
+  <div class="comment">
+   <span class="markdown">Objects representing external identifiers.</span>
+  </div>
+  <div class="info">
+   <span class="markdown">In SKG-IF, it is used in the following classes (domain): * foaf:Organization * fabio:Work In SKG-IF, it is used to link to entities belonging to the following classes (range): * datacite:Identifier</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/datacite/">http://purl.org/spar/datacite/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/datacite/usesIdentifierScheme">
+  <h3>datacite:usesIdentifierScheme (SKG-IF labels: scheme)<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/datacite/usesIdentifierScheme</p>
+  <div class="comment">
+   <span class="markdown">The scheme for the external identifier (e.g., doi, handle, url, pubmed, etc.).</span>
+  </div>
+  <div class="info">
+   <span class="markdown">In SKG-IF, it is used in the following classes (domain): * datacite:Identifier In SKG-IF, it is used to link to entities belonging to the following classes (range): * datacite:IdentifierScheme</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/datacite/">http://purl.org/spar/datacite/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/dcat#accessService">
+  <h3>dcat:accessService (SKG-IF labels: hosting_data_source)<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/dcat#accessService</p>
+  <div class="info">
+   <span class="markdown">In SKG-IF, it is used in the following classes (domain): * fabio:Expression In SKG-IF, it is used to link to entities belonging to the following classes (range): * dcat:DataService</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/dcat#">http://www.w3.org/ns/dcat#</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/relation">
+  <h3>dcterms:relation<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/relation</p>
+  <div class="info">
+   <span class="markdown">In SKG-IF, it is used in the following classes (domain): * datacite:Identifier In SKG-IF, it is used to link to entities belonging to the following classes (range): * dcat:DataService</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/vocab/frbr/core#realization">
+  <h3>frbr:realization (SKG-IF labels: manifestations)<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/vocab/frbr/core#realization</p>
+  <div class="info">
+   <span class="markdown">In SKG-IF, it is used in the following classes (domain): * fabio:Work In SKG-IF, it is used to link to entities belonging to the following classes (range): * fabio:Expression</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/vocab/frbr/core#">http://purl.org/vocab/frbr/core#</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/pro/holdsRoleInTime">
+  <h3>pro:holdsRoleInTime (SKG-IF labels: affiliations)<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/pro/holdsRoleInTime</p>
+  <div class="info">
+   <span class="markdown">In SKG-IF, it is used in the following classes (domain): * foaf:Person In SKG-IF, it is used to link to entities belonging to the following classes (range): * pro:RoleInTime</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/pro/">http://purl.org/spar/pro/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/pro/relatesToOrganization">
+  <h3>pro:relatesToOrganization (SKG-IF labels: declared_affiliations)<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/pro/relatesToOrganization</p>
+  <div class="info">
+   <span class="markdown">In SKG-IF, it is used in the following classes (domain): * pro:RoleInTime In SKG-IF, it is used to link to entities belonging to the following classes (range): * foaf:Organization</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/pro/">http://purl.org/spar/pro/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/pro/withRole">
+  <h3>pro:withRole (SKG-IF labels: role)<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/pro/withRole</p>
+  <div class="info">
+   <span class="markdown">In SKG-IF, it is used in the following classes (domain): * pro:RoleInTime In SKG-IF, it is used to link to entities belonging to the following classes (range): * pro:Role</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/pro/">http://purl.org/spar/pro/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/pso/holdsStatusInTime">
+  <h3>pso:holdsStatusInTime (SKG-IF labels: )<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/pso/holdsStatusInTime</p>
+  <div class="info">
+   <span class="markdown">In SKG-IF, it is used in the following classes (domain): * fabio:Expression In SKG-IF, it is used to link to entities belonging to the following classes (range): * pso:StatusInTime</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/pso/">http://purl.org/spar/pso/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/pso/withStatus">
+  <h3>pso:withStatus (SKG-IF labels: status)<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/pso/withStatus</p>
+  <div class="info">
+   <span class="markdown">In SKG-IF, it is used in the following classes (domain): * pso:StatusInTime In SKG-IF, it is used to link to entities belonging to the following classes (range): * pso:PublicationStatus</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/pso/">http://purl.org/spar/pso/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#inScheme">
+  <h3>skos:inScheme (SKG-IF labels: defined_in)<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#inScheme</p>
+  <div class="info">
+   <span class="markdown">In SKG-IF, it is used in the following classes (domain): * skos:Concept In SKG-IF, it is used to link to entities belonging to the following classes (range): * skos:ConceptScheme</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#">http://www.w3.org/2004/02/skos/core#</a>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://purl.org/dc/terms/issued" title="http://purl.org/dc/terms/issued">dcterms:issued (SKG-IF labels: publication)</a></li>
+  <li><a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title">dcterms:title (SKG-IF labels: titles)</a></li>
+  <li><a href="#http://xmlns.com/foaf/0.1/name" title="http://xmlns.com/foaf/0.1/name">foaf:name (SKG-IF labels: name)</a></li>
+  <li><a href="#http://www.essepuntato.it/2010/06/literalreification/hasLiteralValue" title="http://www.essepuntato.it/2010/06/literalreification/hasLiteralValue">literal:hasLiteralValue (SKG-IF labels: value)</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#prefLabel" title="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel (SKG-IF labels: labels)</a></li>
+ </ul>
+ <div class="entity" id="http://purl.org/dc/terms/issued">
+  <h3>dcterms:issued (SKG-IF labels: publication)<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/issued</p>
+  <div class="comment">
+   <span class="markdown">The date of formal issuance of a resource (e.g. a publication or a patent).</span>
+  </div>
+  <div class="info">
+   <span class="markdown">In SKG-IF, it is used in the following classes (domain): * fabio:Expression In SKG-IF, it is used to link to entities belonging to the following data types (range): * xsd:dateTime</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/title">
+  <h3>dcterms:title (SKG-IF labels: titles)<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/title</p>
+  <div class="comment">
+   <span class="markdown">The titles of a Research product (multiple for multilinguism).</span>
+  </div>
+  <div class="info">
+   <span class="markdown">In SKG-IF, it is used in the following classes (domain): * fabio:Work In SKG-IF, it is used to link to entities belonging to the following data types (range): * rdfs:Literal</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://xmlns.com/foaf/0.1/name">
+  <h3>foaf:name (SKG-IF labels: name)<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/name</p>
+  <div class="comment">
+   <span class="markdown">The string containing whatever concatenation of an Agent name(s).</span>
+  </div>
+  <div class="info">
+   <span class="markdown">In SKG-IF, it is used in the following classes (domain): * foaf:Agent In SKG-IF, it is used to link to entities belonging to the following data types (range): * rdfs:Literal</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/">http://xmlns.com/foaf/0.1/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.essepuntato.it/2010/06/literalreification/hasLiteralValue">
+  <h3>literal:hasLiteralValue (SKG-IF labels: value)<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.essepuntato.it/2010/06/literalreification/hasLiteralValue</p>
+  <div class="comment">
+   <span class="markdown">The external identifier.</span>
+  </div>
+  <div class="info">
+   <span class="markdown">In SKG-IF, it is used in the following classes (domain): * datacite:Identifier In SKG-IF, it is used to link to entities belonging to the following data types (range): * rdfs:Literal</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://www.essepuntato.it/2010/06/literalreification/">http://www.essepuntato.it/2010/06/literalreification/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#prefLabel">
+  <h3>skos:prefLabel (SKG-IF labels: labels)<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#prefLabel</p>
+  <div class="info">
+   <span class="markdown">In SKG-IF, it is used in the following classes (domain): * skos:Concept In SKG-IF, it is used to link to entities belonging to the following data types (range): * rdfs:Literal</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#">http://www.w3.org/2004/02/skos/core#</a>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+ <h3 id="namedindividuals" class="list">Named Individuals</h3>
+ <ul class="hlist">
+  <li><a href="#http://purl.org/spar/datacite/doi" title="http://purl.org/spar/datacite/doi">datacite:doi (SKG-IF labels: doi)</a></li>
+  <li><a href="#http://purl.org/spar/datacite/ror" title="http://purl.org/spar/datacite/ror">datacite:ror (SKG-IF labels: ror)</a></li>
+  <li><a href="#http://purl.org/spar/pso/gold-open-access" title="http://purl.org/spar/pso/gold-open-access">pso:gold-open-access (SKG-IF labels: Gold Open Access)</a></li>
+  <li><a href="#http://purl.org/spar/pso/gratis-open-access" title="http://purl.org/spar/pso/gratis-open-access">pso:gratis-open-access (SKG-IF labels: Diamond Open Access)</a></li>
+  <li><a href="#http://purl.org/spar/pso/green-open-access" title="http://purl.org/spar/pso/green-open-access">pso:green-open-access (SKG-IF labels: Green Open Access)</a></li>
+  <li><a href="#http://purl.org/spar/scoro/affiliate" title="http://purl.org/spar/scoro/affiliate">scoro:affiliate (SKG-IF labels: affiliate)</a></li>
+ </ul>
+ <div class="entity" id="http://purl.org/spar/datacite/doi">
+  <h3>datacite:doi (SKG-IF labels: doi)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/datacite/doi</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/datacite/">http://purl.org/spar/datacite/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/datacite/ror">
+  <h3>datacite:ror (SKG-IF labels: ror)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/datacite/ror</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/datacite/">http://purl.org/spar/datacite/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/pso/gold-open-access">
+  <h3>pso:gold-open-access (SKG-IF labels: Gold Open Access)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/pso/gold-open-access</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/pso/">http://purl.org/spar/pso/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/pso/gratis-open-access">
+  <h3>pso:gratis-open-access (SKG-IF labels: Diamond Open Access)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/pso/gratis-open-access</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/pso/">http://purl.org/spar/pso/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/pso/green-open-access">
+  <h3>pso:green-open-access (SKG-IF labels: Green Open Access)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/pso/green-open-access</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/pso/">http://purl.org/spar/pso/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/scoro/affiliate">
+  <h3>scoro:affiliate (SKG-IF labels: affiliate)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/scoro/affiliate</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/scoro/">http://purl.org/spar/scoro/</a>
+   </dd>
+  </dl>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>
