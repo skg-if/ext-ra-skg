@@ -1,6 +1,6 @@
 ---
-title: API extensions
-parent: Template extension
+title: RA-SKG API extensions
+parent: RA-SKG extension
 layout: default
 nav_order: 3
 ---
