@@ -1,10 +1,10 @@
 ---
-title: Template extension
+title: RA-SKG extension
 layout: default
 nav_exclude: true
 ---
 
-# SKG-IF extension documentation
+# RA-SKG extension
 
 This is a documentation template created to document an SKG-IF extension.
 Use this as a home page to describe the overall purpose of the extension.
