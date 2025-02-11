@@ -1,6 +1,6 @@
 ---
-title: Core extensions
-parent: Template extension
+title: RA_SKG core extensions
+parent: RA-SKG extension
 layout: default
 nav_order: 1
 # nav_exclude: true
