@@ -1,6 +1,6 @@
 ---
-title: Extension entities
-parent: Template extension
+title: RA-SKG extension entities
+parent: RA-SKG extension
 layout: default
 nav_order: 2
 ---
