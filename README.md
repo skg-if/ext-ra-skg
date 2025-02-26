@@ -1,4 +1,5 @@
-# extension-template
+# RA-SKG extension
 
-This repository is a blank template of an SKG-IF extension.
+This repository contains everything related to the RA-SKG extension.
+**TODO:** Update this README.
 
