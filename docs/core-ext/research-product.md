@@ -1,6 +1,6 @@
 ---
 title: Research product
-parent: RA_SKG core extensions
+parent: RA-SKG core extensions
 layout: default
 # nav_order: 1
 ---
