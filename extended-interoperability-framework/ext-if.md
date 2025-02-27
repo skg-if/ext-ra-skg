@@ -2,7 +2,7 @@
 title: Extended interoperability framework
 parent: RA-SKG
 layout: default
-nav_order: 2
+nav_order: 1
 # nav_exclude: true
 has_toc: false
 ---
