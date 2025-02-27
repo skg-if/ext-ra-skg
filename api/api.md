@@ -1,5 +1,5 @@
 ---
-title: RA-SKG API extensions
+title: API extensions
 parent: RA-SKG
 layout: default
 nav_order: 3
