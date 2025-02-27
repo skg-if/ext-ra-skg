@@ -1,6 +1,6 @@
 ---
 title: RA-SKG extended interoperability framework
-parent: RA-SKG extension
+parent: RA-SKG
 layout: default
 nav_order: 2
 # nav_exclude: true

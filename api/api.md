@@ -1,6 +1,6 @@
 ---
 title: RA-SKG API extensions
-parent: RA-SKG extension
+parent: RA-SKG
 layout: default
 nav_order: 3
 ---
