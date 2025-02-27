@@ -1,5 +1,5 @@
 ---
-title: RA-SKG Research product
+title: Research product
 parent: Extended interoperability framework
 layout: default
 nav_order: 2
