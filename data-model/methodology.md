@@ -1,6 +1,6 @@
 ---
 title: Methodology
-parent: RA-SKG extension
+parent: RA-SKG data model
 layout: default
 nav_exclude: true
 nav_order: 1

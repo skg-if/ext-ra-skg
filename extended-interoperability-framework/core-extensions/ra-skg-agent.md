@@ -1,8 +1,8 @@
 ---
-title: (Extended) Agent
-parent: RA-SKG core extensions
+title: RA-SKG Agent
+parent: RA-SKG extended interoperability framework
 layout: default
-# nav_order: 1
+nav_order: 1
 ---
 
 # (Extended) Agent

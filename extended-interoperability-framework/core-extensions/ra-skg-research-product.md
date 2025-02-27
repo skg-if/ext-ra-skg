@@ -1,8 +1,8 @@
 ---
-title: (Extended) Research product
-parent: RA-SKG core extensions
+title: RA-SKG Research product
+parent: RA-SKG extended interoperability framework
 layout: default
-# nav_order: 1
+nav_order: 2
 ---
 
 # (Extended) Research product

@@ -1,5 +1,5 @@
 ---
-title: RA-SKG extension
+title: RA-SKG
 layout: default
 nav_exclude: true
 ---
