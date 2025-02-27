@@ -4,6 +4,7 @@ parent: RA-SKG
 layout: default
 nav_order: 2
 # nav_exclude: true
+has_toc: false
 ---
 # Interoperabilty framework extended by RA-SKG
 
