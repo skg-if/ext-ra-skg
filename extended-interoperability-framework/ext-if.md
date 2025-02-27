@@ -17,10 +17,13 @@ RA-SKG extends these core entities:
 
 
 
-## Extension entities (To be removed?)
+## RA-SKG entities (to be removed?)
 RA-SKG introduces a [New entity].
 
 
 ----
+[RA-SKG research product]: {% link ext-ra-skg/extended-interoperability-framework/core-extensions/ra-skg-research-product.md %}
+[RA-SKG agent]: {% link ext-ra-skg/extended-interoperability-framework/core-extensions/ra-skg-agent.md %}
+[New entity]: {% link ext-ra-skg/extended-interoperability-framework/ra-skg-entities/ra-skg-entity.md %}
 [Research product]: {% link interoperability-framework/docs/research-product.md %}
 [Agent]: {% link interoperability-framework/docs/agent.md %}
