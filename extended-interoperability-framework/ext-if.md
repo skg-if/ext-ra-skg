@@ -1,5 +1,5 @@
 ---
-title: Extended interoperability framework
+title: RA-SKG interoperability framework
 parent: RA-SKG
 layout: default
 nav_order: 1
