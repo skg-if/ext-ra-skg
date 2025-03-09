@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>SKG-IF Ontology: Research Assessment extension</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/skg-if/extension/skg-ra/ontology/","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/skg-if/extension/skg-ra/ontology/","name":"SKG-IF Ontology: Research Assessment extension", "headline":"Document describing the ontology https://w3id.org/skg-if/extension/skg-ra/ontology/", "dateReleased":"Sun Mar 09 15:31:05 CET 2025", "version":"1.0.0"}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>SKG-IF Ontology: Research Assessment extension</h1>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="https://w3id.org/skg-if/extension/ra-skg/ontology/1.0.0/">https://w3id.org/skg-if/extension/ra-skg/ontology/1.0.0/</a></dd>
+<dt>Latest version:</dt>
+<dd><a href="https://w3id.org/skg-if/extension/skg-ra/ontology/">https://w3id.org/skg-if/extension/skg-ra/ontology/</a></dd>
+<dt>Revision:</dt>
+<dd>1.0.0</dd>
+<dt>License:</dt><dd><a href="http://insertlicenseURIhere.example.org" target="_blank"><img src="https://img.shields.io/badge/License-This%20work%20is%20distributed%20under%20a%20Creative%20Commons%20Attribution%20License%20(https://creativecommons.org/licenses/by/4.0/legalcode)-blue.svg" alt="http://insertlicenseURIhere.example.org" /></a>
+</dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd> SKG-IF Ontology: Research Assessment extension. Revision: 1.0.0. Retrieved from: https://w3id.org/skg-if/extension/ra-skg/ontology/1.0.0/</dd>
+</dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div><div id="toc"></div>  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">SKG-O: RA extension: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://purl.org/spar/bido/BibliometricData" title="http://purl.org/spar/bido/BibliometricData">bido:BibliometricData</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/bido/BibliometricDataInTime" title="http://purl.org/spar/bido/BibliometricDataInTime">bido:BibliometricDataInTime</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/bido/BibliometricMeasure" title="http://purl.org/spar/bido/BibliometricMeasure">bido:BibliometricMeasure</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/bido/CategorialBibliometricData"
+         title="http://purl.org/spar/bido/CategorialBibliometricData">bido:CategorialBibliometricData</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/bido/NumericBibliometricData"
+         title="http://purl.org/spar/bido/NumericBibliometricData">bido:NumericBibliometricData</a>
+   </li>
+   <li>
+      <a href="#http://rdfs.org/resume-rdf/CV" title="http://rdfs.org/resume-rdf/CV">cv:CV</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/datacite/IdentifierScheme" title="http://purl.org/spar/datacite/IdentifierScheme">datacite:IdentifierScheme</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/Standard" title="http://purl.org/dc/terms/Standard">dcterms:Standard</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/doco/Section" title="http://purl.org/spar/doco/Section">doco:Section</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/fabio/SubjectTerm" title="http://purl.org/spar/fabio/SubjectTerm">fabio:SubjectTerm (SKG-IF labels: Topic)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/fabio/Work" title="http://purl.org/spar/fabio/Work">fabio:Work (SKG-IF labels: Research product)</a>
+   </li>
+   <li>
+      <a href="#http://xmlns.com/foaf/0.1/Agent" title="http://xmlns.com/foaf/0.1/Agent">foaf:Agent (SKG-IF labels: Agent)</a>
+   </li>
+   <li>
+      <a href="#http://xmlns.com/foaf/0.1/Person" title="http://xmlns.com/foaf/0.1/Person">foaf:Person</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/pro/Role" title="http://purl.org/spar/pro/Role">pro:Role</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/pso/PublicationStatus" title="http://purl.org/spar/pso/PublicationStatus">pso:PublicationStatus</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/scoro/Contribution" title="http://purl.org/spar/scoro/Contribution">scoro:Contribution</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#ConceptScheme"
+         title="http://www.w3.org/2004/02/skos/core#ConceptScheme">skos:ConceptScheme</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://purl.org/spar/bido/accordingTo" title="http://purl.org/spar/bido/accordingTo">bido:accordingTo (SKG-IF labels: ra_provider)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/bido/hasMeasure" title="http://purl.org/spar/bido/hasMeasure">bido:hasMeasure (SKG-IF labels: ra_measure)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/bido/holdsBibliometricDataInTime"
+         title="http://purl.org/spar/bido/holdsBibliometricDataInTime">bido:holdsBibliometricDataInTime (SKG-IF labels: ra_metrics)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/bido/withBibliometricData" title="http://purl.org/spar/bido/withBibliometricData">bido:withBibliometricData (SKG-IF labels: ra_metric)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/cito/cites" title="http://purl.org/spar/cito/cites">cito:cites (SKG-IF labels: cites)</a>
+   </li>
+   <li>
+      <a href="#http://rdfs.org/resume-rdf/aboutPerson" title="http://rdfs.org/resume-rdf/aboutPerson">cv:aboutPerson (SKG-IF labels: ra_profiles)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/conformsTo" title="http://purl.org/dc/terms/conformsTo">dcterms:conformsTo (SKG-IF labels: ra_template)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/vocab/frbr/core#part" title="http://purl.org/vocab/frbr/core#part">frbr:part (SKG-IF labels: ra_sections)</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#inScheme" title="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme (SKG-IF labels: defined_in)</a>
+   </li>
+   <li>
+      <a href="#http://www.essepuntato.it/2012/04/tvc/withinContext"
+         title="http://www.essepuntato.it/2012/04/tvc/withinContext">tvc:withinContext (SKG-IF labels: ra_discipline)</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://purl.org/spar/bido/hasNumericValue" title="http://purl.org/spar/bido/hasNumericValue">bido:hasNumericValue (SKG-IF labels: ra_value)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/c4o/hasContent" title="http://purl.org/spar/c4o/hasContent">c4o:hasContent (SKG-IF labels: ra_content)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description">dcterms:description (SKG-IF labels: description)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title">dcterms:title (SKG-IF labels: title)</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#prefLabel" title="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel (SKG-IF labels: labels)</a>
+   </li>
+</ul><h4>Named Individuals</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://purl.org/spar/datacite/github" title="http://purl.org/spar/datacite/github">datacite:github (SKG-IF labels: ra_github)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/pso/gold-open-access" title="http://purl.org/spar/pso/gold-open-access">pso:gold-open-access (SKG-IF labels: ra_gold:oa)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/pso/gratis-open-access" title="http://purl.org/spar/pso/gratis-open-access">pso:gratis-open-access (SKG-IF labels: ra_gratis_oa)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/pso/green-open-access" title="http://purl.org/spar/pso/green-open-access">pso:green-open-access (SKG-IF labels: ra_green_oa)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/scoro/collects-data" title="http://purl.org/spar/scoro/collects-data">scoro:collects-data (SKG-IF labels: ra_collects_data)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/scoro/design-experiments" title="http://purl.org/spar/scoro/design-experiments">scoro:design-experiments (SKG-IF labels: ra_design_experiments)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/scoro/maintains-IT-infrastructure"
+         title="http://purl.org/spar/scoro/maintains-IT-infrastructure">scoro:maintains-IT-infrastructure (SKG-IF labels: maintains_infra)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/scoro/performs-experiments" title="http://purl.org/spar/scoro/performs-experiments">scoro:performs-experiments (SKG-IF labels: ra_performs_experiments)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/scoro/prepares-supplementary-information"
+         title="http://purl.org/spar/scoro/prepares-supplementary-information">scoro:prepares-supplementary-information (SKG-IF labels: ra_prepares_suppl_info)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/scoro/principal-investigator"
+         title="http://purl.org/spar/scoro/principal-investigator">scoro:principal-investigator (SKG-IF labels: ra_pi)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/scoro/provides-existing-data"
+         title="http://purl.org/spar/scoro/provides-existing-data">scoro:provides-existing-data (SKG-IF labels: ra_provides_data)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/scoro/provides-software" title="http://purl.org/spar/scoro/provides-software">scoro:provides-software (SKG-IF labels: ra_provides_software)</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spar/scoro/undertakes-modelling" title="http://purl.org/spar/scoro/undertakes-modelling">scoro:undertakes-modelling (SKG-IF labels: ra_modelling)</a>
+   </li>
+</ul>
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">SKG-O: RA extension: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">This extension of the SKG-IF data model introduces entities which are required for research assessment use cases, as well as their relationships with well-established entities of the scholarly communication domain. Examples of such entities are research performance indicators, which are used to support various research evaluation processes, and narrative CVs, which are texts presenting the overarching story of one or more research products usually related to an entity of interest. It should be noted that this extension is being developed within the context of the EC project GraspOS.</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for SKG-O: RA extension classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by SKG-O: RA extension.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#http://purl.org/spar/bido/BibliometricData" title="http://purl.org/spar/bido/BibliometricData">bido:BibliometricData</a></li>
+  <li><a href="#http://purl.org/spar/bido/BibliometricDataInTime" title="http://purl.org/spar/bido/BibliometricDataInTime">bido:BibliometricDataInTime</a></li>
+  <li><a href="#http://purl.org/spar/bido/BibliometricMeasure" title="http://purl.org/spar/bido/BibliometricMeasure">bido:BibliometricMeasure</a></li>
+  <li><a href="#http://purl.org/spar/bido/CategorialBibliometricData" title="http://purl.org/spar/bido/CategorialBibliometricData">bido:CategorialBibliometricData</a></li>
+  <li><a href="#http://purl.org/spar/bido/NumericBibliometricData" title="http://purl.org/spar/bido/NumericBibliometricData">bido:NumericBibliometricData</a></li>
+  <li><a href="#http://rdfs.org/resume-rdf/CV" title="http://rdfs.org/resume-rdf/CV">cv:CV</a></li>
+  <li><a href="#http://purl.org/spar/datacite/IdentifierScheme" title="http://purl.org/spar/datacite/IdentifierScheme">datacite:IdentifierScheme</a></li>
+  <li><a href="#http://purl.org/dc/terms/Standard" title="http://purl.org/dc/terms/Standard">dcterms:Standard</a></li>
+  <li><a href="#http://purl.org/spar/doco/Section" title="http://purl.org/spar/doco/Section">doco:Section</a></li>
+  <li><a href="#http://purl.org/spar/fabio/SubjectTerm" title="http://purl.org/spar/fabio/SubjectTerm">fabio:SubjectTerm (SKG-IF labels: Topic)</a></li>
+  <li><a href="#http://purl.org/spar/fabio/Work" title="http://purl.org/spar/fabio/Work">fabio:Work (SKG-IF labels: Research product)</a></li>
+  <li><a href="#http://xmlns.com/foaf/0.1/Agent" title="http://xmlns.com/foaf/0.1/Agent">foaf:Agent (SKG-IF labels: Agent)</a></li>
+  <li><a href="#http://xmlns.com/foaf/0.1/Person" title="http://xmlns.com/foaf/0.1/Person">foaf:Person</a></li>
+  <li><a href="#http://purl.org/spar/pro/Role" title="http://purl.org/spar/pro/Role">pro:Role</a></li>
+  <li><a href="#http://purl.org/spar/pso/PublicationStatus" title="http://purl.org/spar/pso/PublicationStatus">pso:PublicationStatus</a></li>
+  <li><a href="#http://purl.org/spar/scoro/Contribution" title="http://purl.org/spar/scoro/Contribution">scoro:Contribution</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#ConceptScheme" title="http://www.w3.org/2004/02/skos/core#ConceptScheme">skos:ConceptScheme</a></li>
+ </ul>
+ <div class="entity" id="http://purl.org/spar/bido/BibliometricData">
+  <h3>bido:BibliometricData<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/bido/BibliometricData</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/bido/">http://purl.org/spar/bido/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/bido/BibliometricDataInTime">
+  <h3>bido:BibliometricDataInTime<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/bido/BibliometricDataInTime</p>
+  <div class="info">
+   <span class="markdown">The properties that can be used with this class are: * dcterms:description -[0..1]-&gt; rdfs:Literal * bido:accordingTo -[0..1]-&gt; foaf:Agent * bido:withBibliometricData -[1]-&gt; bido:BibliometricData * tvc:withinContext -[0..N]-&gt; fabio:SubjectTerm</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/bido/">http://purl.org/spar/bido/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/bido/BibliometricMeasure">
+  <h3>bido:BibliometricMeasure<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/bido/BibliometricMeasure</p>
+  <div class="info">
+   <span class="markdown">The properties that can be used with this class are: * skos:inScheme -[0..1]-&gt; skos:ConceptScheme * skos:prefLabel -[0..N]-&gt; rdfs:Literal</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/bido/">http://purl.org/spar/bido/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/bido/CategorialBibliometricData">
+  <h3>bido:CategorialBibliometricData<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/bido/CategorialBibliometricData</p>
+  <div class="info">
+   <span class="markdown">The properties that can be used with this class are: * skos:inScheme -[0..1]-&gt; skos:ConceptScheme * skos:prefLabel -[0..N]-&gt; rdfs:Literal</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/bido/">http://purl.org/spar/bido/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/bido/NumericBibliometricData">
+  <h3>bido:NumericBibliometricData<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/bido/NumericBibliometricData</p>
+  <div class="info">
+   <span class="markdown">The properties that can be used with this class are: * bido:hasMeasure -[1]-&gt; bido:BibliometricMeasure * bido:hasNumericValue -[1]-&gt; xsd:float</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/bido/">http://purl.org/spar/bido/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://rdfs.org/resume-rdf/CV">
+  <h3>cv:CV<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://rdfs.org/resume-rdf/CV</p>
+  <div class="info">
+   <span class="markdown">The properties that can be used with this class are: * cv:aboutPerson -[1]-&gt; foaf:Person * frbr:part -[0..N]-&gt; doco:Section * dcterms:title -[0..1]-&gt; rdfs:Literal * dcterms:conformsTo -[0..1]-&gt; dcterms:Standard</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://rdfs.org/resume-rdf/cv.rdfs">http://rdfs.org/resume-rdf/cv.rdfs</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/datacite/IdentifierScheme">
+  <h3>datacite:IdentifierScheme<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/datacite/IdentifierScheme</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/datacite/">http://purl.org/spar/datacite/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#http://purl.org/spar/datacite/github" title="http://purl.org/spar/datacite/github">datacite:github (SKG-IF labels: ra_github)</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/Standard">
+  <h3>dcterms:Standard<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/Standard</p>
+  <div class="info">
+   <span class="markdown">The properties that can be used with this class are: * skos:prefLabel -[0..N]-&gt; rdfs:Literal</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/doco/Section">
+  <h3>doco:Section<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/doco/Section</p>
+  <div class="info">
+   <span class="markdown">The properties that can be used with this class are: * cito:cites -[0..N]-&gt; fabio:Work * dcterms:title -[0..1]-&gt; rdfs:Literal * dcterms:description -[0..1]-&gt; rdfs:Literal * c4o:hasContent -[0..1]-&gt; rdfs:Literal</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/doco/">http://purl.org/spar/doco/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/fabio/SubjectTerm">
+  <h3>fabio:SubjectTerm (SKG-IF labels: Topic)<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/fabio/SubjectTerm</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/fabio/">http://purl.org/spar/fabio/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/fabio/Work">
+  <h3>fabio:Work (SKG-IF labels: Research product)<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/fabio/Work</p>
+  <div class="info">
+   <span class="markdown">The properties that can be used with this class are: * bido:holdsBibliometricDataInTime -[0..N]-&gt; bido:holdsBibliometricDataInTime</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/fabio/">http://purl.org/spar/fabio/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://xmlns.com/foaf/0.1/Agent">
+  <h3>foaf:Agent (SKG-IF labels: Agent)<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/Agent</p>
+  <div class="info">
+   <span class="markdown">The properties that can be used with this class are: * bido:holdsBibliometricDataInTime -[0..N]-&gt; bido:holdsBibliometricDataInTime</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/">http://xmlns.com/foaf/0.1/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://xmlns.com/foaf/0.1/Person">
+  <h3>foaf:Person<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/Person</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://xmlns.com/foaf/0.1/">http://xmlns.com/foaf/0.1/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/pro/Role">
+  <h3>pro:Role<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/pro/Role</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/pro/">http://purl.org/spar/pro/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#http://purl.org/spar/scoro/principal-investigator" title="http://purl.org/spar/scoro/principal-investigator">scoro:principal-investigator (SKG-IF labels: ra_pi)</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/pso/PublicationStatus">
+  <h3>pso:PublicationStatus<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/pso/PublicationStatus</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/pso/">http://purl.org/spar/pso/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#http://purl.org/spar/pso/gold-open-access" title="http://purl.org/spar/pso/gold-open-access">pso:gold-open-access (SKG-IF labels: ra_gold:oa)</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://purl.org/spar/pso/gratis-open-access" title="http://purl.org/spar/pso/gratis-open-access">pso:gratis-open-access (SKG-IF labels: ra_gratis_oa)</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://purl.org/spar/pso/green-open-access" title="http://purl.org/spar/pso/green-open-access">pso:green-open-access (SKG-IF labels: ra_green_oa)</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/scoro/Contribution">
+  <h3>scoro:Contribution<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/scoro/Contribution</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/scoro/">http://purl.org/spar/scoro/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#http://purl.org/spar/scoro/collects-data" title="http://purl.org/spar/scoro/collects-data">scoro:collects-data (SKG-IF labels: ra_collects_data)</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://purl.org/spar/scoro/design-experiments" title="http://purl.org/spar/scoro/design-experiments">scoro:design-experiments (SKG-IF labels: ra_design_experiments)</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://purl.org/spar/scoro/maintains-IT-infrastructure" title="http://purl.org/spar/scoro/maintains-IT-infrastructure">scoro:maintains-IT-infrastructure (SKG-IF labels: maintains_infra)</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://purl.org/spar/scoro/performs-experiments" title="http://purl.org/spar/scoro/performs-experiments">scoro:performs-experiments (SKG-IF labels: ra_performs_experiments)</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://purl.org/spar/scoro/prepares-supplementary-information" title="http://purl.org/spar/scoro/prepares-supplementary-information">scoro:prepares-supplementary-information (SKG-IF labels: ra_prepares_suppl_info)</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://purl.org/spar/scoro/provides-existing-data" title="http://purl.org/spar/scoro/provides-existing-data">scoro:provides-existing-data (SKG-IF labels: ra_provides_data)</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://purl.org/spar/scoro/provides-software" title="http://purl.org/spar/scoro/provides-software">scoro:provides-software (SKG-IF labels: ra_provides_software)</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://purl.org/spar/scoro/undertakes-modelling" title="http://purl.org/spar/scoro/undertakes-modelling">scoro:undertakes-modelling (SKG-IF labels: ra_modelling)</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+  <h3>skos:ConceptScheme<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#ConceptScheme</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#">http://www.w3.org/2004/02/skos/core#</a>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://purl.org/spar/bido/accordingTo" title="http://purl.org/spar/bido/accordingTo">bido:accordingTo (SKG-IF labels: ra_provider)</a></li>
+  <li><a href="#http://purl.org/spar/bido/hasMeasure" title="http://purl.org/spar/bido/hasMeasure">bido:hasMeasure (SKG-IF labels: ra_measure)</a></li>
+  <li><a href="#http://purl.org/spar/bido/holdsBibliometricDataInTime" title="http://purl.org/spar/bido/holdsBibliometricDataInTime">bido:holdsBibliometricDataInTime (SKG-IF labels: ra_metrics)</a></li>
+  <li><a href="#http://purl.org/spar/bido/withBibliometricData" title="http://purl.org/spar/bido/withBibliometricData">bido:withBibliometricData (SKG-IF labels: ra_metric)</a></li>
+  <li><a href="#http://purl.org/spar/cito/cites" title="http://purl.org/spar/cito/cites">cito:cites (SKG-IF labels: cites)</a></li>
+  <li><a href="#http://rdfs.org/resume-rdf/aboutPerson" title="http://rdfs.org/resume-rdf/aboutPerson">cv:aboutPerson (SKG-IF labels: ra_profiles)</a></li>
+  <li><a href="#http://purl.org/dc/terms/conformsTo" title="http://purl.org/dc/terms/conformsTo">dcterms:conformsTo (SKG-IF labels: ra_template)</a></li>
+  <li><a href="#http://purl.org/vocab/frbr/core#part" title="http://purl.org/vocab/frbr/core#part">frbr:part (SKG-IF labels: ra_sections)</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#inScheme" title="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme (SKG-IF labels: defined_in)</a></li>
+  <li><a href="#http://www.essepuntato.it/2012/04/tvc/withinContext" title="http://www.essepuntato.it/2012/04/tvc/withinContext">tvc:withinContext (SKG-IF labels: ra_discipline)</a></li>
+ </ul>
+ <div class="entity" id="http://purl.org/spar/bido/accordingTo">
+  <h3>bido:accordingTo (SKG-IF labels: ra_provider)<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/bido/accordingTo</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/bido/">http://purl.org/spar/bido/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/bido/hasMeasure">
+  <h3>bido:hasMeasure (SKG-IF labels: ra_measure)<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/bido/hasMeasure</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/bido/">http://purl.org/spar/bido/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/bido/holdsBibliometricDataInTime">
+  <h3>bido:holdsBibliometricDataInTime (SKG-IF labels: ra_metrics)<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/bido/holdsBibliometricDataInTime</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/bido/">http://purl.org/spar/bido/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/bido/withBibliometricData">
+  <h3>bido:withBibliometricData (SKG-IF labels: ra_metric)<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/bido/withBibliometricData</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/bido/">http://purl.org/spar/bido/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/cito/cites">
+  <h3>cito:cites (SKG-IF labels: cites)<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/cito/cites</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/cito/">http://purl.org/spar/cito/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://rdfs.org/resume-rdf/aboutPerson">
+  <h3>cv:aboutPerson (SKG-IF labels: ra_profiles)<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://rdfs.org/resume-rdf/aboutPerson</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://rdfs.org/resume-rdf/cv.rdfs">http://rdfs.org/resume-rdf/cv.rdfs</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/conformsTo">
+  <h3>dcterms:conformsTo (SKG-IF labels: ra_template)<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/conformsTo</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/vocab/frbr/core#part">
+  <h3>frbr:part (SKG-IF labels: ra_sections)<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/vocab/frbr/core#part</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/vocab/frbr/core#">http://purl.org/vocab/frbr/core#</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#inScheme">
+  <h3>skos:inScheme (SKG-IF labels: defined_in)<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#inScheme</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#">http://www.w3.org/2004/02/skos/core#</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.essepuntato.it/2012/04/tvc/withinContext">
+  <h3>tvc:withinContext (SKG-IF labels: ra_discipline)<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.essepuntato.it/2012/04/tvc/withinContext</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/tvc/">http://purl.org/spar/tvc/</a>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://purl.org/spar/bido/hasNumericValue" title="http://purl.org/spar/bido/hasNumericValue">bido:hasNumericValue (SKG-IF labels: ra_value)</a></li>
+  <li><a href="#http://purl.org/spar/c4o/hasContent" title="http://purl.org/spar/c4o/hasContent">c4o:hasContent (SKG-IF labels: ra_content)</a></li>
+  <li><a href="#http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description">dcterms:description (SKG-IF labels: description)</a></li>
+  <li><a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title">dcterms:title (SKG-IF labels: title)</a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#prefLabel" title="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel (SKG-IF labels: labels)</a></li>
+ </ul>
+ <div class="entity" id="http://purl.org/spar/bido/hasNumericValue">
+  <h3>bido:hasNumericValue (SKG-IF labels: ra_value)<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/bido/hasNumericValue</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/bido/">http://purl.org/spar/bido/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/c4o/hasContent">
+  <h3>c4o:hasContent (SKG-IF labels: ra_content)<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/c4o/hasContent</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/c4o/">http://purl.org/spar/c4o/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/description">
+  <h3>dcterms:description (SKG-IF labels: description)<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/description</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/title">
+  <h3>dcterms:title (SKG-IF labels: title)<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/title</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#prefLabel">
+  <h3>skos:prefLabel (SKG-IF labels: labels)<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#prefLabel</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#">http://www.w3.org/2004/02/skos/core#</a>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+ <h3 id="namedindividuals" class="list">Named Individuals</h3>
+ <ul class="hlist">
+  <li><a href="#http://purl.org/spar/datacite/github" title="http://purl.org/spar/datacite/github">datacite:github (SKG-IF labels: ra_github)</a></li>
+  <li><a href="#http://purl.org/spar/pso/gold-open-access" title="http://purl.org/spar/pso/gold-open-access">pso:gold-open-access (SKG-IF labels: ra_gold:oa)</a></li>
+  <li><a href="#http://purl.org/spar/pso/gratis-open-access" title="http://purl.org/spar/pso/gratis-open-access">pso:gratis-open-access (SKG-IF labels: ra_gratis_oa)</a></li>
+  <li><a href="#http://purl.org/spar/pso/green-open-access" title="http://purl.org/spar/pso/green-open-access">pso:green-open-access (SKG-IF labels: ra_green_oa)</a></li>
+  <li><a href="#http://purl.org/spar/scoro/collects-data" title="http://purl.org/spar/scoro/collects-data">scoro:collects-data (SKG-IF labels: ra_collects_data)</a></li>
+  <li><a href="#http://purl.org/spar/scoro/design-experiments" title="http://purl.org/spar/scoro/design-experiments">scoro:design-experiments (SKG-IF labels: ra_design_experiments)</a></li>
+  <li><a href="#http://purl.org/spar/scoro/maintains-IT-infrastructure" title="http://purl.org/spar/scoro/maintains-IT-infrastructure">scoro:maintains-IT-infrastructure (SKG-IF labels: maintains_infra)</a></li>
+  <li><a href="#http://purl.org/spar/scoro/performs-experiments" title="http://purl.org/spar/scoro/performs-experiments">scoro:performs-experiments (SKG-IF labels: ra_performs_experiments)</a></li>
+  <li><a href="#http://purl.org/spar/scoro/prepares-supplementary-information" title="http://purl.org/spar/scoro/prepares-supplementary-information">scoro:prepares-supplementary-information (SKG-IF labels: ra_prepares_suppl_info)</a></li>
+  <li><a href="#http://purl.org/spar/scoro/principal-investigator" title="http://purl.org/spar/scoro/principal-investigator">scoro:principal-investigator (SKG-IF labels: ra_pi)</a></li>
+  <li><a href="#http://purl.org/spar/scoro/provides-existing-data" title="http://purl.org/spar/scoro/provides-existing-data">scoro:provides-existing-data (SKG-IF labels: ra_provides_data)</a></li>
+  <li><a href="#http://purl.org/spar/scoro/provides-software" title="http://purl.org/spar/scoro/provides-software">scoro:provides-software (SKG-IF labels: ra_provides_software)</a></li>
+  <li><a href="#http://purl.org/spar/scoro/undertakes-modelling" title="http://purl.org/spar/scoro/undertakes-modelling">scoro:undertakes-modelling (SKG-IF labels: ra_modelling)</a></li>
+ </ul>
+ <div class="entity" id="http://purl.org/spar/datacite/github">
+  <h3>datacite:github (SKG-IF labels: ra_github)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/datacite/github</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/datacite/">http://purl.org/spar/datacite/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#http://purl.org/spar/datacite/IdentifierScheme" title="http://purl.org/spar/datacite/IdentifierScheme">datacite:IdentifierScheme</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/pso/gold-open-access">
+  <h3>pso:gold-open-access (SKG-IF labels: ra_gold:oa)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/pso/gold-open-access</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/pso/">http://purl.org/spar/pso/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#http://purl.org/spar/pso/PublicationStatus" title="http://purl.org/spar/pso/PublicationStatus">pso:PublicationStatus</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/pso/gratis-open-access">
+  <h3>pso:gratis-open-access (SKG-IF labels: ra_gratis_oa)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/pso/gratis-open-access</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/pso/">http://purl.org/spar/pso/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#http://purl.org/spar/pso/PublicationStatus" title="http://purl.org/spar/pso/PublicationStatus">pso:PublicationStatus</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/pso/green-open-access">
+  <h3>pso:green-open-access (SKG-IF labels: ra_green_oa)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/pso/green-open-access</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/pso/">http://purl.org/spar/pso/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#http://purl.org/spar/pso/PublicationStatus" title="http://purl.org/spar/pso/PublicationStatus">pso:PublicationStatus</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/scoro/collects-data">
+  <h3>scoro:collects-data (SKG-IF labels: ra_collects_data)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/scoro/collects-data</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/scoro/">http://purl.org/spar/scoro/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#http://purl.org/spar/scoro/Contribution" title="http://purl.org/spar/scoro/Contribution">scoro:Contribution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/scoro/design-experiments">
+  <h3>scoro:design-experiments (SKG-IF labels: ra_design_experiments)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/scoro/design-experiments</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/scoro/">http://purl.org/spar/scoro/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#http://purl.org/spar/scoro/Contribution" title="http://purl.org/spar/scoro/Contribution">scoro:Contribution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/scoro/maintains-IT-infrastructure">
+  <h3>scoro:maintains-IT-infrastructure (SKG-IF labels: maintains_infra)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/scoro/maintains-IT-infrastructure</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/scoro/">http://purl.org/spar/scoro/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#http://purl.org/spar/scoro/Contribution" title="http://purl.org/spar/scoro/Contribution">scoro:Contribution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/scoro/performs-experiments">
+  <h3>scoro:performs-experiments (SKG-IF labels: ra_performs_experiments)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/scoro/performs-experiments</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/scoro/">http://purl.org/spar/scoro/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#http://purl.org/spar/scoro/Contribution" title="http://purl.org/spar/scoro/Contribution">scoro:Contribution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/scoro/prepares-supplementary-information">
+  <h3>scoro:prepares-supplementary-information (SKG-IF labels: ra_prepares_suppl_info)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/scoro/prepares-supplementary-information</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/scoro/">http://purl.org/spar/scoro/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#http://purl.org/spar/scoro/Contribution" title="http://purl.org/spar/scoro/Contribution">scoro:Contribution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/scoro/principal-investigator">
+  <h3>scoro:principal-investigator (SKG-IF labels: ra_pi)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/scoro/principal-investigator</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/scoro/">http://purl.org/spar/scoro/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#http://purl.org/spar/pro/Role" title="http://purl.org/spar/pro/Role">pro:Role</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/scoro/provides-existing-data">
+  <h3>scoro:provides-existing-data (SKG-IF labels: ra_provides_data)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/scoro/provides-existing-data</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/scoro/">http://purl.org/spar/scoro/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#http://purl.org/spar/scoro/Contribution" title="http://purl.org/spar/scoro/Contribution">scoro:Contribution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/scoro/provides-software">
+  <h3>scoro:provides-software (SKG-IF labels: ra_provides_software)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/scoro/provides-software</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/scoro/">http://purl.org/spar/scoro/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#http://purl.org/spar/scoro/Contribution" title="http://purl.org/spar/scoro/Contribution">scoro:Contribution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spar/scoro/undertakes-modelling">
+  <h3>scoro:undertakes-modelling (SKG-IF labels: ra_modelling)<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spar/scoro/undertakes-modelling</p>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spar/scoro/">http://purl.org/spar/scoro/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#http://purl.org/spar/scoro/Contribution" title="http://purl.org/spar/scoro/Contribution">scoro:Contribution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals <br/>
+</div>
+</div>
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

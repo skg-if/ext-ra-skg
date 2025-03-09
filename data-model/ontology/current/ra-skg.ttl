@@ -1,0 +1,279 @@
+@prefix : <https://w3id.org/skg-if/extension/ra-skg/ontology/> .
+@prefix bido: <http://purl.org/spar/bido/> .
+@prefix c4o: <http://purl.org/spar/c4o/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix cv: <http://rdfs.org/resume-rdf/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doco: <http://purl.org/spar/doco/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix pso: <http://purl.org/spar/pso/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix scoro: <http://purl.org/spar/scoro/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tvc: <http://www.essepuntato.it/2012/04/tvc/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dc:date a owl:AnnotationProperty .
+
+dc:description a owl:AnnotationProperty .
+
+dc:rights a owl:AnnotationProperty .
+
+dc:title a owl:AnnotationProperty .
+
+dcterms:Standard a owl:Class ;
+    rdfs:label "dcterms:Standard"^^rdfs:Literal ;
+    dc:description """The properties that can be used with this class are:
+
+* skos:prefLabel -[0..N]-> rdfs:Literal""" ;
+    rdfs:isDefinedBy dcterms: .
+
+dcterms:conformsTo a owl:ObjectProperty ;
+    rdfs:label "dcterms:conformsTo (SKG-IF labels: ra_template)" ;
+    rdfs:isDefinedBy dcterms: .
+
+dcterms:description a owl:DatatypeProperty ;
+    rdfs:label "dcterms:description (SKG-IF labels: description)" ;
+    rdfs:isDefinedBy dcterms: .
+
+dcterms:title a owl:DatatypeProperty ;
+    rdfs:label "dcterms:title (SKG-IF labels: title)" ;
+    rdfs:isDefinedBy dcterms: .
+
+bido:BibliometricData a owl:Class ;
+    rdfs:label "bido:BibliometricData"^^rdfs:Literal ;
+    rdfs:isDefinedBy bido: .
+
+bido:BibliometricDataInTime a owl:Class ;
+    rdfs:label "bido:BibliometricDataInTime"^^rdfs:Literal ;
+    dc:description """The properties that can be used with this class are:
+
+* dcterms:description -[0..1]-> rdfs:Literal
+* bido:accordingTo -[0..1]-> foaf:Agent
+* bido:withBibliometricData -[1]-> bido:BibliometricData
+* tvc:withinContext -[0..N]-> fabio:SubjectTerm""" ;
+    rdfs:isDefinedBy bido: .
+
+bido:BibliometricMeasure a owl:Class ;
+    rdfs:label "bido:BibliometricMeasure"^^rdfs:Literal ;
+    dc:description """The properties that can be used with this class are:
+
+* skos:inScheme -[0..1]-> skos:ConceptScheme
+* skos:prefLabel -[0..N]-> rdfs:Literal""" ;
+    rdfs:isDefinedBy bido: .
+
+bido:CategorialBibliometricData a owl:Class ;
+    rdfs:label "bido:CategorialBibliometricData"^^rdfs:Literal ;
+    dc:description """The properties that can be used with this class are:
+
+* skos:inScheme -[0..1]-> skos:ConceptScheme
+* skos:prefLabel -[0..N]-> rdfs:Literal""" ;
+    rdfs:isDefinedBy bido: .
+
+bido:NumericBibliometricData a owl:Class ;
+    rdfs:label "bido:NumericBibliometricData"^^rdfs:Literal ;
+    dc:description """The properties that can be used with this class are:
+
+* bido:hasMeasure -[1]-> bido:BibliometricMeasure
+* bido:hasNumericValue -[1]-> xsd:float""" ;
+    rdfs:isDefinedBy bido: .
+
+bido:accordingTo a owl:ObjectProperty ;
+    rdfs:label "bido:accordingTo (SKG-IF labels: ra_provider)" ;
+    rdfs:isDefinedBy bido: .
+
+bido:hasMeasure a owl:ObjectProperty ;
+    rdfs:label "bido:hasMeasure (SKG-IF labels: ra_measure)" ;
+    rdfs:isDefinedBy bido: .
+
+bido:hasNumericValue a owl:DatatypeProperty ;
+    rdfs:label "bido:hasNumericValue (SKG-IF labels: ra_value)" ;
+    rdfs:isDefinedBy bido: .
+
+bido:holdsBibliometricDataInTime a owl:ObjectProperty ;
+    rdfs:label "bido:holdsBibliometricDataInTime (SKG-IF labels: ra_metrics)" ;
+    rdfs:isDefinedBy bido: .
+
+bido:withBibliometricData a owl:ObjectProperty ;
+    rdfs:label "bido:withBibliometricData (SKG-IF labels: ra_metric)" ;
+    rdfs:isDefinedBy bido: .
+
+c4o:hasContent a owl:DatatypeProperty ;
+    rdfs:label "c4o:hasContent (SKG-IF labels: ra_content)" ;
+    rdfs:isDefinedBy c4o: .
+
+cito:cites a owl:ObjectProperty ;
+    rdfs:label "cito:cites (SKG-IF labels: cites)" ;
+    rdfs:isDefinedBy cito: .
+
+datacite:github a datacite:IdentifierScheme,
+        owl:NamedIndividual ;
+    rdfs:label "datacite:github (SKG-IF labels: ra_github)" ;
+    rdfs:isDefinedBy datacite: .
+
+doco:Section a owl:Class ;
+    rdfs:label "doco:Section"^^rdfs:Literal ;
+    dc:description """The properties that can be used with this class are:
+
+* cito:cites -[0..N]-> fabio:Work
+* dcterms:title -[0..1]-> rdfs:Literal
+* dcterms:description -[0..1]-> rdfs:Literal
+* c4o:hasContent -[0..1]-> rdfs:Literal""" ;
+    rdfs:isDefinedBy doco: .
+
+fabio:SubjectTerm a owl:Class ;
+    rdfs:label "fabio:SubjectTerm (SKG-IF labels: Topic)" ;
+    rdfs:isDefinedBy fabio: .
+
+fabio:Work a owl:Class ;
+    rdfs:label "fabio:Work (SKG-IF labels: Research product)" ;
+    dc:description """The properties that can be used with this class are:
+
+* bido:holdsBibliometricDataInTime -[0..N]-> bido:holdsBibliometricDataInTime""" ;
+    rdfs:isDefinedBy fabio: .
+
+pso:gold-open-access a pso:PublicationStatus,
+        owl:NamedIndividual ;
+    rdfs:label "pso:gold-open-access (SKG-IF labels: ra_gold:oa)"^^rdfs:Literal ;
+    rdfs:isDefinedBy pso: .
+
+pso:gratis-open-access a pso:PublicationStatus,
+        owl:NamedIndividual ;
+    rdfs:label "pso:gratis-open-access (SKG-IF labels: ra_gratis_oa)"^^rdfs:Literal ;
+    rdfs:isDefinedBy pso: .
+
+pso:green-open-access a pso:PublicationStatus,
+        owl:NamedIndividual ;
+    rdfs:label "pso:green-open-access (SKG-IF labels: ra_green_oa)"^^rdfs:Literal ;
+    rdfs:isDefinedBy pso: .
+
+scoro:collects-data a scoro:Contribution,
+        owl:NamedIndividual ;
+    rdfs:label "scoro:collects-data (SKG-IF labels: ra_collects_data)" ;
+    rdfs:isDefinedBy scoro: .
+
+scoro:design-experiments a scoro:Contribution,
+        owl:NamedIndividual ;
+    rdfs:label "scoro:design-experiments (SKG-IF labels: ra_design_experiments)" ;
+    rdfs:isDefinedBy scoro: .
+
+scoro:maintains-IT-infrastructure a scoro:Contribution,
+        owl:NamedIndividual ;
+    rdfs:label "scoro:maintains-IT-infrastructure (SKG-IF labels: maintains_infra)" ;
+    rdfs:isDefinedBy scoro: .
+
+scoro:performs-experiments a scoro:Contribution,
+        owl:NamedIndividual ;
+    rdfs:label "scoro:performs-experiments (SKG-IF labels: ra_performs_experiments)" ;
+    rdfs:isDefinedBy scoro: .
+
+scoro:prepares-supplementary-information a scoro:Contribution,
+        owl:NamedIndividual ;
+    rdfs:label "scoro:prepares-supplementary-information (SKG-IF labels: ra_prepares_suppl_info)" ;
+    rdfs:isDefinedBy scoro: .
+
+scoro:principal-investigator a pro:Role,
+        owl:NamedIndividual ;
+    rdfs:label "scoro:principal-investigator (SKG-IF labels: ra_pi)" ;
+    rdfs:isDefinedBy scoro: .
+
+scoro:provides-existing-data a scoro:Contribution,
+        owl:NamedIndividual ;
+    rdfs:label "scoro:provides-existing-data (SKG-IF labels: ra_provides_data)" ;
+    rdfs:isDefinedBy scoro: .
+
+scoro:provides-software a scoro:Contribution,
+        owl:NamedIndividual ;
+    rdfs:label "scoro:provides-software (SKG-IF labels: ra_provides_software)" ;
+    rdfs:isDefinedBy scoro: .
+
+scoro:undertakes-modelling a scoro:Contribution,
+        owl:NamedIndividual ;
+    rdfs:label "scoro:undertakes-modelling (SKG-IF labels: ra_modelling)" ;
+    rdfs:isDefinedBy scoro: .
+
+frbr:part a owl:ObjectProperty ;
+    rdfs:label "frbr:part (SKG-IF labels: ra_sections)" ;
+    rdfs:isDefinedBy frbr: .
+
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+
+cv:CV a owl:Class ;
+    rdfs:label "cv:CV"^^rdfs:Literal ;
+    dc:description """The properties that can be used with this class are:
+
+* cv:aboutPerson -[1]-> foaf:Person
+* frbr:part -[0..N]-> doco:Section
+* dcterms:title -[0..1]-> rdfs:Literal
+* dcterms:conformsTo -[0..1]-> dcterms:Standard""" ;
+    rdfs:isDefinedBy cv:cv.rdfs .
+
+cv:aboutPerson a owl:ObjectProperty ;
+    rdfs:label "cv:aboutPerson (SKG-IF labels: ra_profiles)" ;
+    rdfs:isDefinedBy cv:cv.rdfs .
+
+tvc:withinContext a owl:ObjectProperty ;
+    rdfs:label "tvc:withinContext (SKG-IF labels: ra_discipline)" ;
+    rdfs:isDefinedBy <http://purl.org/spar/tvc/> .
+
+xsd:date a rdfs:Datatype .
+
+skos:ConceptScheme a owl:Class ;
+    rdfs:label "skos:ConceptScheme"^^rdfs:Literal ;
+    rdfs:isDefinedBy skos: .
+
+skos:inScheme a owl:ObjectProperty ;
+    rdfs:label "skos:inScheme (SKG-IF labels: defined_in)" ;
+    rdfs:isDefinedBy skos: .
+
+skos:prefLabel a owl:DatatypeProperty ;
+    rdfs:label "skos:prefLabel (SKG-IF labels: labels)" ;
+    rdfs:isDefinedBy skos: .
+
+foaf:Agent a owl:Class ;
+    rdfs:label "foaf:Agent (SKG-IF labels: Agent)" ;
+    dc:description """The properties that can be used with this class are:
+
+* bido:holdsBibliometricDataInTime -[0..N]-> bido:holdsBibliometricDataInTime""" ;
+    rdfs:isDefinedBy foaf: .
+
+foaf:Person a owl:Class ;
+    rdfs:label "foaf:Person"^^rdfs:Literal ;
+    rdfs:isDefinedBy foaf: .
+
+: a owl:Ontology ;
+    rdfs:label "SKG-O: RA extension" ;
+    dc:date "2025-03-09" ;
+    dc:rights "This work is distributed under a Creative Commons Attribution License (https://creativecommons.org/licenses/by/4.0/legalcode)" ;
+    dc:title "SKG-IF Ontology: Research Assessment extension" ;
+    vann:preferredNamespacePrefix "ra-skg" ;
+    vann:preferredNamespaceUri "https://w3id.org/skg-if/extension/skg-ra/ontology/"^^xsd:anyURI ;
+    rdfs:comment "This extension of the SKG-IF data model introduces entities which are required for research assessment use cases, as well as their relationships with well-established entities of the scholarly communication domain. Examples of such entities are research performance indicators, which are used to support various research evaluation processes, and narrative CVs, which are texts presenting the overarching story of one or more research products usually related to an entity of interest. It should be noted that this extension is being developed within the context of the EC project GraspOS." ;
+    owl:versionIRI <https://w3id.org/skg-if/extension/ra-skg/ontology/1.0.0/> ;
+    owl:versionInfo "1.0.0" .
+
+datacite:IdentifierScheme a owl:Class ;
+    rdfs:label "datacite:IdentifierScheme"^^rdfs:Literal ;
+    rdfs:isDefinedBy datacite: .
+
+pro:Role a owl:Class ;
+    rdfs:label "pro:Role"^^rdfs:Literal ;
+    rdfs:isDefinedBy pro: .
+
+pso:PublicationStatus a owl:Class ;
+    rdfs:label "pso:PublicationStatus"^^rdfs:Literal ;
+    rdfs:isDefinedBy pso: .
+
+scoro:Contribution a owl:Class ;
+    rdfs:label "scoro:Contribution"^^rdfs:Literal ;
+    rdfs:isDefinedBy scoro: .
+
