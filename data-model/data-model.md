@@ -13,7 +13,7 @@ The RA-SKG Data Model is used to model extends the SKG-IF Data Model with additi
 
 The RA-SKG Data Model, summarised in the following [Graffoo diagrams](https://essepuntato.it/graffoo), allows one to record information which are required for research assessment use cases, as well as their relationships with well-established entities of the scholarly communication domain. Examples of such entities are research performance indicators, which are used to support various research evaluation processes, and narrative CVs, which are texts presenting the overarching story of one or more research products usually related to an entity of interest.
 
-![RA-SKG diagram]({% link graphs/ra-skg.png %})
+![RA-SKG diagram]({% link ext-ra-skg/data-model/graphs/ra-skg.png %})
 
 The SKG-IF Data Model has been also implemented as an OWL ontology, i.e., the [SKG-IF Ontology: Research Assessment extension](https://w3id.org/skg-if/extension/ra-skg/ontology/). It is not yet another bibliographic ontology, but rather a place where existing and complementary ontological entities from several other ontologies are grouped together for the purpose of providing descriptive metadata compliant with this extension.
 
