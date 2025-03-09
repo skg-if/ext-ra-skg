@@ -138,7 +138,7 @@
     <dc:rights>This work is distributed under a Creative Commons Attribution License (https://creativecommons.org/licenses/by/4.0/legalcode)</dc:rights>
     <dc:title>SKG-IF Ontology: Research Assessment extension</dc:title>
     <vann:preferredNamespacePrefix>ra-skg</vann:preferredNamespacePrefix>
-    <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://w3id.org/skg-if/extension/skg-ra/ontology/</vann:preferredNamespaceUri>
+    <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://w3id.org/skg-if/extension/ra-skg/ontology/</vann:preferredNamespaceUri>
     <rdfs:comment>This extension of the SKG-IF data model introduces entities which are required for research assessment use cases, as well as their relationships with well-established entities of the scholarly communication domain. Examples of such entities are research performance indicators, which are used to support various research evaluation processes, and narrative CVs, which are texts presenting the overarching story of one or more research products usually related to an entity of interest. It should be noted that this extension is being developed within the context of the EC project GraspOS.</rdfs:comment>
     <rdfs:label>SKG-O: RA extension</rdfs:label>
     <owl:versionInfo>1.0.0</owl:versionInfo>

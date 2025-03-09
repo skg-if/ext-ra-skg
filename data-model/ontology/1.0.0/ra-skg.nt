@@ -21,7 +21,7 @@
 <http://purl.org/vocab/frbr/core#part> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://purl.org/dc/terms/title> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
 <http://purl.org/spar/scoro/undertakes-modelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/skg-if/extension/ra-skg/ontology/> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/skg-if/extension/skg-ra/ontology/"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/skg-if/extension/ra-skg/ontology/> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/skg-if/extension/ra-skg/ontology/"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://purl.org/spar/scoro/Contribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.w3.org/2004/02/skos/core#ConceptScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/spar/fabio/Work> <http://purl.org/dc/elements/1.1/description> "The properties that can be used with this class are:\n\n* bido:holdsBibliometricDataInTime -[0..N]-> bido:holdsBibliometricDataInTime" .
