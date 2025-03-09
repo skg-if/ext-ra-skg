@@ -1,0 +1,118 @@
+@prefix bido: <http://purl.org/spar/bido/> .
+@prefix c4o: <http://purl.org/spar/c4o/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix cv: <http://rdfs.org/resume-rdf/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doco: <http://purl.org/spar/doco/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tvc: <http://www.essepuntato.it/2012/04/tvc/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dcterms:StandardShape a sh:NodeShape ;
+    sh:property [ sh:minCount 0 ;
+            sh:nodeKind sh:Literal ;
+            sh:path skos:prefLabel ] ;
+    sh:targetClass dcterms:Standard .
+
+bido:BibliometricDataInTimeShape a sh:NodeShape ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:or ( [ sh:class bido:BibliometricData ] [ sh:nodeKind sh:BlankNodeOrIRI ] ) ;
+            sh:path bido:withBibliometricData ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:description ],
+        [ sh:minCount 0 ;
+            sh:or ( [ sh:class fabio:SubjectTerm ] [ sh:nodeKind sh:BlankNodeOrIRI ] ) ;
+            sh:path tvc:withinContext ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:or ( [ sh:class foaf:Agent ] [ sh:nodeKind sh:BlankNodeOrIRI ] ) ;
+            sh:path bido:accordingTo ] ;
+    sh:targetClass bido:BibliometricDataInTime .
+
+bido:BibliometricMeasureShape a sh:NodeShape ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:or ( [ sh:class skos:ConceptScheme ] [ sh:nodeKind sh:BlankNodeOrIRI ] ) ;
+            sh:path skos:inScheme ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:Literal ;
+            sh:path skos:prefLabel ] ;
+    sh:targetClass bido:BibliometricMeasure .
+
+bido:CategorialBibliometricDataShape a sh:NodeShape ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:or ( [ sh:class skos:ConceptScheme ] [ sh:nodeKind sh:BlankNodeOrIRI ] ) ;
+            sh:path skos:inScheme ],
+        [ sh:minCount 0 ;
+            sh:nodeKind sh:Literal ;
+            sh:path skos:prefLabel ] ;
+    sh:targetClass bido:CategorialBibliometricData .
+
+bido:NumericBibliometricDataShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:float ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path bido:hasNumericValue ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:or ( [ sh:class bido:BibliometricMeasure ] [ sh:nodeKind sh:BlankNodeOrIRI ] ) ;
+            sh:path bido:hasMeasure ] ;
+    sh:targetClass bido:NumericBibliometricData .
+
+doco:SectionShape a sh:NodeShape ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:Literal ;
+            sh:path c4o:hasContent ],
+        [ sh:minCount 0 ;
+            sh:or ( [ sh:class fabio:Work ] [ sh:nodeKind sh:BlankNodeOrIRI ] ) ;
+            sh:path cito:cites ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:description ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:title ] ;
+    sh:targetClass doco:Section .
+
+fabio:WorkShape a sh:NodeShape ;
+    sh:property [ sh:minCount 0 ;
+            sh:or ( [ sh:class bido:holdsBibliometricDataInTime ] [ sh:nodeKind sh:BlankNodeOrIRI ] ) ;
+            sh:path bido:holdsBibliometricDataInTime ] ;
+    sh:targetClass fabio:Work .
+
+cv:CVShape a sh:NodeShape ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:or ( [ sh:class foaf:Person ] [ sh:nodeKind sh:BlankNodeOrIRI ] ) ;
+            sh:path cv:aboutPerson ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:or ( [ sh:class dcterms:Standard ] [ sh:nodeKind sh:BlankNodeOrIRI ] ) ;
+            sh:path dcterms:conformsTo ],
+        [ sh:minCount 0 ;
+            sh:or ( [ sh:class doco:Section ] [ sh:nodeKind sh:BlankNodeOrIRI ] ) ;
+            sh:path frbr:part ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:Literal ;
+            sh:path dcterms:title ] ;
+    sh:targetClass cv:CV .
+
+foaf:AgentShape a sh:NodeShape ;
+    sh:property [ sh:minCount 0 ;
+            sh:or ( [ sh:class bido:holdsBibliometricDataInTime ] [ sh:nodeKind sh:BlankNodeOrIRI ] ) ;
+            sh:path bido:holdsBibliometricDataInTime ] ;
+    sh:targetClass foaf:Agent .
+
