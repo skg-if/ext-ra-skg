@@ -5,4 +5,4 @@ parent: Motivating Scenario 1
 nav_order: 5
 ---
 
-![Sample data]({% link data-model/samod/01/development/06-ABox.ttl %})
+![Sample data]({% link ext-ra-skg/data-model/samod/01/development/06_ABox.ttl %})
