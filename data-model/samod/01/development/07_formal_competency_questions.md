@@ -1,4 +1,13 @@
+---
+title: Formal Competency Questions
+layout: default
+parent: Motivating Scenario 1
+nav_order: 6
+---
+
 # Formal Competency Questions
+
+## Motivating scenario - [Academic profiles for researchers](./01_motivating-scenario)
 
 ## C1
 Provide a list of all articles authored by Yoyota Vuvuli over the last two years, ranked in a descending order by their citation counts.

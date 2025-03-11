@@ -1,3 +1,10 @@
+---
+title: Formal Competency Questions
+layout: default
+parent: Motivating Scenario 2
+nav_order: 6
+---
+
 # Formal Competency Questions
 
 ## MS1

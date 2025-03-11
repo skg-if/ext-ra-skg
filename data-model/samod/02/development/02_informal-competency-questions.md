@@ -1,3 +1,10 @@
+---
+title: Informal Competency Questions
+layout: default
+parent: Motivating Scenario 2
+nav_order: 1
+---
+
 # Informal Competency Questions
 
 ## CQ_01

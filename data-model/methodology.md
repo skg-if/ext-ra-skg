@@ -24,23 +24,23 @@ The second group (model engineers) created **_glossaries_** based on scenarios d
 
 Links to all resources produced in the process mentioned in the previous paragraph for two scenarios are listed below:
 - Academic profiles for researchers
-  - [Description and examples](./samod/01/development/01_motivating-scenario.md)
-  - [Informal competency questions](./samod/01/development/02_informal-competency-questions.md)
-  - [Glossary](./samod/01/development/03_glossary.md)
-  - [Diagram](./samod/01/development/04_diagram.png)
-  - [Formal model](./samod/01/development/05_TBox.ttl)
-  - [Sample data](./samod/01/development/06_ABox.ttl)
-  - [Formal competency questions](./samod/01/development/07_formal_competency_questions.md)
-  - [Test](./samod/01/development/08_formal_testing.ipynb)
+  - [Description and examples](./samod/01/development/01_motivating-scenario)
+  - [Informal competency questions](./samod/01/development/02_informal-competency-questions)
+  - [Glossary](./samod/01/development/03_glossary)
+  - [Diagram](./samod/01/development/04_diagram)
+  - [Formal model](./samod/01/development/05_TBox)
+  - [Sample data](./samod/01/development/06_ABox)
+  - [Formal competency questions](./samod/01/development/07_formal_competency_questions)
+  - [Test](./samod/01/development/08_formal_testing)
 - Indicators for monitoring Research Performing Organisations
-  - [Description and examples](./samod/02/development/01_motivating-scenario.md)
-  - [Informal competency questions](./samod/02/development/02_informal-competency-questions.md)
-  - [Glossary](./samod/02/development/03_glossary.md)
-  - [Diagram](./samod/02/development/04_diagram.png)
-  - [Formal model](./samod/02/development/05_TBox.ttl)
-  - [Sample data](./samod/02/development/06_ABox.ttl)
-  - [Formal competency questions](./samod/02/development/07_formal_competency_questions.md)
-  - [Test](./samod/02/development/08_formal_testing.ipynb)
+  - [Description and examples](./samod/02/development/01_motivating-scenario)
+  - [Informal competency questions](./samod/02/development/02_informal-competency-questions)
+  - [Glossary](./samod/02/development/03_glossary)
+  - [Diagram](./samod/02/development/04_diagram)
+  - [Formal model](./samod/02/development/05_TBox)
+  - [Sample data](./samod/02/development/06_ABox)
+  - [Formal competency questions](./samod/02/development/07_formal_competency_questions)
+  - [Test](./samod/02/development/08_formal_testing)
 
 By creation of all resources listed above a **_modelet_** has been created for each motivating scenario.
 A modelet is a stand-alone model supporting a particular motivating scenario. By definition, a modelet does not include entities from other parts of the final model (RA-SKG-IF).

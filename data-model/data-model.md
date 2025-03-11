@@ -19,4 +19,4 @@ The SKG-IF Data Model has been also implemented as an OWL ontology, i.e., the [S
 
 The SKG-IF data created following the [RA-SKG extension of the SKG-IF Interoperability Framework](/ext-ra-skg/extended-interoperability-framework/) are aligned with the *SKG-IF Ontology: Research Assessment extension* via the [SKG-IF JSON-LD context](https://w3id.org/skg-if/context/skg-if.json) extended with the [RA-SKG JSON-LD context](https://w3id.org/skg-if/extension/ra-skg/context/skg-if.json). In addition, a specific [SHACL document](https://w3id.org/skg-if/extension/ra-skg/validation/shacl) has been developed for semantically validating the data provided according to the data model of this extension.
 
-To produce this data model this [methodology](./methodology.md) has been used.
+To produce this data model this [methodology](./methodology) has been used.

@@ -1,3 +1,10 @@
+---
+title: Motivating Scenario 1
+parent: Methodology
+layout: default
+nav_order: 1
+---
+
 # Motivating Scenario
 
 ## Name
