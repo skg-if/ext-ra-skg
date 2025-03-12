@@ -220,7 +220,7 @@ WHERE {
 
 ***
 
-## C4
+## MS1_CQ_04
 
 Provide the values of all researcher-level indicators for Yoyota Vuvuli.
 
