@@ -2,7 +2,7 @@
 title: Motivating Scenario 2
 parent: Methodology
 layout: default
-nav_order: 1
+nav_order: 2
 ---
 
 # Motivating Scenario

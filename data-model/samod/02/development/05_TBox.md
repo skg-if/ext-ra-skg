@@ -5,4 +5,181 @@ parent: Motivating Scenario 2
 nav_order: 4
 ---
 
-![Formal Model]({% link ext-ra-skg/data-model/samod/02/development/05_TBox.ttl %})
+```
+@prefix : <https://example.org/skg-if/extention/02/schema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://example.org/skg-if/extention/02/schema/> .
+
+<https://example.org/skg-if/extention/02/schema/> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://example.org/skg-if/extention/02/schema/usesIdentifierScheme
+:usesIdentifierScheme rdf:type owl:ObjectProperty .
+
+
+###  https://example.org/skg-if/extention/02/schema/relation
+:relation rdf:type owl:ObjectProperty .
+
+
+###  https://example.org/skg-if/extention/02/schema/hasIdentifier
+:hasIdentifier rdf:type owl:ObjectProperty .
+
+
+###  https://example.org/skg-if/extention/02/schema/relatesToOrganization
+:relatesToOrganization rdf:type owl:ObjectProperty .
+
+
+###  https://example.org/skg-if/extention/02/schema/withRole
+:withRole rdf:type owl:ObjectProperty .
+
+
+###  https://example.org/skg-if/extention/02/schema/holdsRoleInTime
+:holdsRoleInTime rdf:type owl:ObjectProperty .
+
+
+###  https://example.org/skg-if/extention/02/schema/realization
+:realization rdf:type owl:ObjectProperty .
+
+
+###  https://example.org/skg-if/extention/02/schema/accessService
+:accessService rdf:type owl:ObjectProperty .
+
+
+###  https://example.org/skg-if/extention/02/schema/holdsStatusInTime
+:holdsStatusInTime rdf:type owl:ObjectProperty .
+
+
+###  https://example.org/skg-if/extention/02/schema/withStatus
+:withStatus rdf:type owl:ObjectProperty .
+
+
+###  https://example.org/skg-if/extention/02/schema/inScheme
+:inScheme rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://example.org/skg-if/extention/02/schema/name
+:name rdf:type owl:DatatypeProperty .
+
+
+###  https://example.org/skg-if/extention/02/schema/hasLiteralValue
+:hasLiteralValue rdf:type owl:DatatypeProperty .
+
+
+###  https://example.org/skg-if/extention/02/schema/title
+:title rdf:type owl:DatatypeProperty .
+
+
+###  https://example.org/skg-if/extention/02/schema/prefLabel
+:prefLabel rdf:type owl:DatatypeProperty .
+
+
+###  https://example.org/skg-if/extention/02/schema/issued
+:issued rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://example.org/skg-if/extention/02/schema/IdentifierScheme
+:IdentifierScheme rdf:type owl:Class .
+
+
+###  https://example.org/skg-if/extention/02/schema/Identifier
+:Identifier rdf:type owl:Class .
+
+
+###  https://example.org/skg-if/extention/02/schema/Repository
+:Repository rdf:type owl:Class .
+
+
+###  https://example.org/skg-if/extention/02/schema/Organization
+:Organization rdf:type owl:Class .
+
+
+###  https://example.org/skg-if/extention/02/schema/RoleInTime
+:RoleInTime rdf:type owl:Class .
+
+
+###  https://example.org/skg-if/extention/02/schema/Role
+:Role rdf:type owl:Class .
+
+
+###  https://example.org/skg-if/extention/02/schema/Person
+:Person rdf:type owl:Class .
+
+
+###  https://example.org/skg-if/extention/02/schema/Work
+:Work rdf:type owl:Class .
+
+
+###  https://example.org/skg-if/extention/02/schema/Dataset
+:Dataset rdf:type owl:Class .
+
+
+###  https://example.org/skg-if/extention/02/schema/Expression
+:Expression rdf:type owl:Class .
+
+
+###  https://example.org/skg-if/extention/02/schema/JournalArticle
+:JournalArticle rdf:type owl:Class .
+
+
+###  https://example.org/skg-if/extention/02/schema/Preprint
+:Preprint rdf:type owl:Class .
+
+
+###  https://example.org/skg-if/extention/02/schema/StatusInTime
+:StatusInTime rdf:type owl:Class .
+
+
+###  https://example.org/skg-if/extention/02/schema/PublicationStatus
+:PublicationStatus rdf:type owl:Class .
+
+
+###  https://example.org/skg-if/extention/02/schema/Concept
+:Concept rdf:type owl:Class .
+
+
+###  https://example.org/skg-if/extention/02/schema/ConceptScheme
+:ConceptScheme rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://example.org/skg-if/extention/02/schema/gold-open-access
+:gold-open-access rdf:type :PublicationStatus .
+
+
+###  https://example.org/skg-if/extention/02/schema/green-open-access
+:green-open-access rdf:type :PublicationStatus .
+
+
+###  https://example.org/skg-if/extention/02/schema/diamond-open-access
+:diamond-open-access rdf:type :PublicationStatus .
+
+
+###  https://example.org/skg-if/extention/02/schema/doi
+:doi rdf:type :IdentifierScheme .
+
+
+###  https://example.org/skg-if/extention/02/schema/ror
+:ror rdf:type :IdentifierScheme .
+
+
+###  https://example.org/skg-if/extention/02/schema/affiliate
+:affiliate rdf:type :Role .
+```
