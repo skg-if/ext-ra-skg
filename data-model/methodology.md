@@ -1,6 +1,6 @@
 ---
 title: Methodology
-parent: Data model
+parent: RA-SKG data model
 layout: default
 nav_order: 1
 ---
