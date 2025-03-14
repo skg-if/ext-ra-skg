@@ -1,6 +1,7 @@
 ---
 title: Agent
-parent: RA-SKG interoperability framework
+parent: Interoperability framework
+ancestor: RA-SKG
 layout: default
 nav_order: 1
 ---
