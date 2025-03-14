@@ -7,7 +7,7 @@ nav_order: 6
 
 # Formal Competency Questions
 
-## MS1
+## MS2_CQ_01
 Provide a list of all Open Access Publications for 2023 for Journal Articles (Gold (APC Driven), Green, Diamond) published by authors affiliated with University of Bologna using the OpenAIRE Graph.
 
 ```SPARQL
@@ -51,7 +51,7 @@ WHERE {
 
 ***
 
-## MS2
+## MS2_CQ_02
 
 Provide a list of all datasets identified in OpenAIRE that are affiliated with University of Bologna, in any year between 2014-2024.
 
@@ -94,7 +94,7 @@ GROUP BY ?dataset
 
 ***
 
-## MS3
+## MS2_CQ_03
 
 Provide a list of all Preprints identified in OpenAIRE that are affiliated with University of Bologna, in any year between 2014-2024.
 

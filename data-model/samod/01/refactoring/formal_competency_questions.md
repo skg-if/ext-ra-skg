@@ -1,6 +1,6 @@
 # Formal Competency Questions
 
-## C1
+## MS1_CQ_01
 Provide a list of all articles authored by Yoyota Vuvuli over the last two years, ranked in a descending order by their citation counts.
 
 ```SPARQL
@@ -169,7 +169,7 @@ ORDER BY DESC(?citations)
 
 ***
 
-## C2
+## MS1_CQ_02
 
 Provide all narratives included in John Doe's narrative CV.
 
@@ -210,7 +210,7 @@ WHERE {
 
 ***
 
-## C3
+## MS1_CQ_03
 
 Provide information about the article-level indicator called "Citations".
 
@@ -259,7 +259,7 @@ WHERE {
 
 ***
 
-## C4
+## MS1_CQ_04
 
 Provide the values of all researcher-level indicators for Yoyota Vuvuli.
 

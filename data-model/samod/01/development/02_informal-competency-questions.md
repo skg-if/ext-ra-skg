@@ -10,7 +10,7 @@ nav_order: 1
 ## CQ_01
 
 ### Identifier
-C1
+MS1_CQ_01
 
 ### Question
 Provide a list of all articles authored by Yoyota Vuvuli over the last two years, ranked in a descending order by their citation counts.
@@ -70,7 +70,7 @@ Example 1
 ## CQ_02
 
 ### Identifier
-C2
+MS1_CQ_02
 
 ### Question
 Provide all narratives included in John Doe's narrative CV.
@@ -95,7 +95,7 @@ Example 2
 ## CQ_03
 
 ### Identifier
-C3
+MS1_CQ_03
 
 ### Question
 Provide information about the article-level indicator called "Citations".
@@ -122,7 +122,7 @@ Example 1
 ## CQ_04
 
 ### Identifier
-C4
+MS1_CQ_04
 
 ### Question
 Provide the values of all researcher-level indicators for Yoyota Vuvuli.

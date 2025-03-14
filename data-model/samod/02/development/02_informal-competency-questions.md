@@ -10,7 +10,7 @@ nav_order: 1
 ## CQ_01
 
 ### Identifier
-MS1
+MS2_CQ_01
 
 ### Question
 Provide a list of all Open Access Publications for 2023 for Journal Articles (Gold (APC Driven), Green, Diamond) published by authors affiliated with University of Bologna using the OpenAIRE Graph.
@@ -41,7 +41,7 @@ Example 1
 ## CQ_02
 
 ### Identifier
-MS2
+MS2_CQ_02
 
 ### Question
 Provide a list of all datasets identified in OpenAIRE that are affiliated with University of Bologna, in any year between 2014-2024.
@@ -69,7 +69,7 @@ Example 2
 ## CQ_03
 
 ### Identifier
-MS3
+MS2_CQ_03
 
 ### Question
 Provide a list of all Preprints identified in OpenAIRE that are affiliated with University of Bologna, in any year between 2014-2024.
