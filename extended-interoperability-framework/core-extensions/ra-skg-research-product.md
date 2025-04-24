@@ -15,7 +15,15 @@ Here below, please describe the new properties and relations that the extension 
 ## Properties
 
 ### `ra_metrics`
-*List* (recommended): **add description here**. Each element of the list is structured as follow.
+*List* (recommended): A collection of metrics available for a [Research product]. 
+
+Each element of the list is structured as follow.
+- `ra_metric` Object (mandatory): The information about the provided metric.
+  Metrics can be of two kinds:
+  - Scalar (e.g., a citation count)
+  - Badges (e.g., a property or claim the [Research product] exhibits)
+- `ra_provider` *String* (mandatory): The [Agent] providing the metric.
+- `description` *String* (mandatory): A description of the metric.
 
 
 
@@ -51,3 +59,4 @@ Here below, please describe the new properties and relations that the extension 
 
 ----
 [Research product]: {% link interoperability-framework/docs/research-product.md %}
+[Agent]: {% link interoperability-framework/docs/agent.md %}
