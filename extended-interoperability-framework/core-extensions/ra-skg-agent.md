@@ -51,14 +51,14 @@ Each element of the list is structured as follow.
 
 
 ### `ra_profiles`
-*List* (recommended): A collection of supporting narratives for [Agent] (applies only to `Person`). 
+*List* (recommended): A collection of narrative profiles for an [Agent] (applies only if the `entity_type` of an  [Agent] is `person`) that can support an evaluation. 
 
 Each element of the list is structured as follows:
-- `title` *String* (mandatory): the title of the narrative 
+- `title` *String* (mandatory): the title of the narrative profile.
 - `ra_sections` *List* (mandatory): Sections composing the narrative. Each section has the following properties:
     - `title` *String* (mandatory): Title of the section
     - `content` *String* (mandatory): Content of the section
-    - `cites` *List* (mandatory):  [Research products] the section is referring to.
+    - `cites` *List* (mandatory): [Research products] the section is referring to.
 
 
 ```json
@@ -77,7 +77,6 @@ Each element of the list is structured as follows:
 				"cites": ["product_3", "product_4"]	
 			}		
 		]
-		
 	}
 ]
 ```
