@@ -18,10 +18,7 @@ Here below, please describe the new properties and relations that the extension 
 *List* (recommended): A collection of metrics available for a [Research product]. 
 
 Each element of the list is structured as follow.
-- `ra_metric` *Object* (mandatory): The information about the provided metric.
-  
-  Metrics can be of two kinds:
-  
+- `ra_metric` *Object* (mandatory): The information about the provided metric. Metrics can be of two kinds:
   - **Scalar** (e.g., a citation count). In this case, `ra_metric` has the following properties:
     - `class` *String* (recommended): The URL of the class identifying the entity (e.g., in an ontology) describing that type.
     - `labels` *Object* (recommended): the labels describing the type (multiple for multilingualism). 
@@ -69,3 +66,4 @@ Each element of the list is structured as follow.
 ----
 [Research product]: {% link interoperability-framework/docs/research-product.md %}
 [Agent]: {% link interoperability-framework/docs/agent.md %}
+[ISO 639-1]: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
