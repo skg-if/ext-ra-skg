@@ -8,9 +8,7 @@ nav_order: 2
 
 # (Extended) Research product
 
-By default, this extended core entity inherits all the properties defined in the core [Research product].
-Here below, please describe the new properties and relations that the extension adds to the default [Research product].
-
+The RA-SKG extension introduce metrics (i.e., indicators and badges) for [Research product].
 
 ## Properties
 
@@ -20,10 +18,12 @@ Here below, please describe the new properties and relations that the extension 
 Each element of the list is structured as follow.
 - `ra_metric` *Object* (mandatory): The information about the provided metric. Metrics can be of two kinds:
   - **Scalar** (e.g., a citation count). In this case, `ra_metric` has the following properties:
-    - `class` *String* (recommended): The URL of the class identifying the entity (e.g., in an ontology) describing that type.
-    - `labels` *Object* (recommended): the labels describing the type (multiple for multilingualism). 
+    - `ra_measure` *Object* (mandatory): An object containing representing the scalar and its meaning.
+      - `class` *String* (mandatory): The URL of the class identifying the entity (e.g., in an ontology) describing that type.
+      - `labels` *Object* (mandatory): the labels describing the type (multiple for multilingualism). 
     The object is a dictionary, the keys represent language codes following [ISO 639-1]; the special key `none` is reserved whenever the information about the language is not available or cannot be shared.
-    - `defined_in` *String* (recommended): the URL of the schema of the manifestation type, e.g., a link to the vocabulary of allowed product types.
+      - `defined_in` *String* (mandatory): the URL of the schema of the manifestation type, e.g., a link to the vocabulary of allowed product types.
+    - `ra_value` *String* (mandatory): the value of the metric.
   
   - **Badges** (e.g., a property or claim the [Research product] exhibits). In this case, `ra_metric` has the following properties:
     - `labels` *Object* (recommended): the labels describing the type (multiple for multilingualism). 
