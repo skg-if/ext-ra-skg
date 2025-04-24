@@ -24,7 +24,7 @@ Each element of the list is structured as follow.
       - `defined_in` *String* (mandatory): the URL of the schema of the manifestation type, e.g., a link to the vocabulary of allowed product types.
     - `ra_value` *String* (mandatory): the actual value of the metric.
 - `ra_provider` *String* (mandatory): An [Agent] providing the metric.
-- `ra_discipline` *String* (mandatory): An [Topic] the metric is relevant to.
+- `ra_discipline` *String* (mandatory): A [Topic] the metric is relevant to.
 - `description` *String* (mandatory): A description of the metric.
 
 
@@ -49,8 +49,41 @@ Each element of the list is structured as follow.
 ]
 ```
 
+
+### `ra_profiles`
+*List* (recommended): A collection of supporting narratives for [Agent] (applies only to `Person`). 
+
+Each element of the list is structured as follows:
+- `title` *String* (mandatory): the title of the narrative 
+- `ra_sections` *List* (mandatory): Sections composing the narrative. Each section has the following properties:
+    - `title` *String* (mandatory): Title of the section
+    - `content` *String* (mandatory): Content of the section
+    - `cites` *List* (mandatory):  [Research products] the section is referring to.
+
+
+```json
+"ra_profiles" : [
+	{
+		"title": "John Doe CV",
+		"ra_sections": [
+			{
+				"title": "Ethical AI Models in Biochemical Research",
+				"content": "As artificial intelligence (AI) becomes integral to ...",
+				"cites": ["product_1", "product_2"]	
+			},
+			{
+				"title": "Exploring the Duality of Molecular Systems for Drug Design",
+				"content": "The complexity of molecular behavior in biological ...",
+				"cites": ["product_3", "product_4"]	
+			}		
+		]
+		
+	}
+]
+```
 ----
 [Research product]: {% link interoperability-framework/docs/research-product.md %}
+[Research products]: {% link interoperability-framework/docs/research-product.md %}
 [Agent]: {% link interoperability-framework/docs/agent.md %}
 [Topic]: {% link interoperability-framework/docs/topic.md %}
 [ISO 639-1]: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
