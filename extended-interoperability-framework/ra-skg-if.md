@@ -8,9 +8,6 @@ has_toc: false
 ---
 # Interoperability framework extended by RA-SKG
 
-{: .important }
-To prevent possible clashes with other extensions, each extension is assigned a unique prefix (e.g., the acronym you provided upon requesting an extension) that you need to prepend when defining new properties and relations for core entities.
-
 ## Core extensions
 RA-SKG extends these core entities:
 - [Research product] is extended by [RA-SKG research product]

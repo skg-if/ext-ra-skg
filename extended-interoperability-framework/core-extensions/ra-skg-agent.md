@@ -35,24 +35,24 @@ Each element of the list is structured as follow.
 
 
 ```json
-"ra_metrics": [
-	{
-		"ra_metric": {
-			"ra_measure": {
-				"class": "http://purl.org/spar/bido/author-citation-count",
-				"labels": {
-					"en": "author citation count",
-					"it": "conteggio delle citazioni ricevute dall'autore"
-				},
-				"defined_in": "http://purl.org/spar/bido-standard-bibliometric-measures"
-			},
-			"ra_value": 3125.0
-		},
-		"ra_provider": "agent_1",
-		"ra_discipline": "topic_1",
-		"description": "The total number of citations received by all articles of a specific discipline of the researcher of interest. All publication records of subtype 'Article' from the OpenAIRE Graph that are marked as authored by the researcher were collected and their citations from other articles were counted. Citations and article metadata required to calculate the particular indicator are gathered by the OpenAIRE Graph v9.0.0."
-	}
-]
+  "ra_metrics": [
+    {
+      "ra_metric": {
+        "ra_measure": {
+          "class": "http://purl.org/spar/bido/author-citation-count",
+          "labels": {
+            "en": "author citation count",
+            "it": "conteggio delle citazioni ricevute dall'autore"
+          },
+          "defined_in": "http://purl.org/spar/bido-standard-bibliometric-measures"
+        },
+        "ra_value": 3125.0
+      },
+      "ra_provider": "agent_1",
+      "ra_discipline": "topic_1",
+      "description": "The total number of citations received by all articles of a specific discipline of the researcher of interest. All publication records of subtype 'Article' from the OpenAIRE Graph that are marked as authored by the researcher were collected and their citations from other articles were counted. Citations and article metadata required to calculate the particular indicator are gathered by the OpenAIRE Graph v9.0.0."
+    }
+  ]
 ```
 
 

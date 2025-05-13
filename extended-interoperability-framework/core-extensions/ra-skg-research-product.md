@@ -35,7 +35,7 @@ Each element of the list is structured as follow.
 
 
 ```json
-"ra_metrics": [
+  "ra_metrics": [
     {
       "ra_metric": {
         "ra_measure": {
