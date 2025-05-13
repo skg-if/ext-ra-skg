@@ -26,8 +26,10 @@ Each element of the list is structured as follow.
     - `ra_value` *String* (mandatory): the actual value of the metric.
   
   - **Badges** indicating a property or claim the [Research product] exhibits. In this case, `ra_metric` has the following properties:
+    - `class` *String* (mandatory): The URL of the class identifying the entity (e.g., in an ontology) describing that type.
     - `labels` *Object* (mandatory): the labels describing the type (multiple for multilingualism). 
     The object is a dictionary, the keys represent language codes following [ISO 639-1]; the special key `none` is reserved whenever the information about the language is not available or cannot be shared.
+    - `defined_in` *String* (mandatory): the URL of the schema of the manifestation type, e.g., a link to the vocabulary of allowed product types.
 - `ra_provider` *String* (mandatory): An [Agent] providing the metric.
 - `description` *String* (mandatory): A description of the metric.
 
