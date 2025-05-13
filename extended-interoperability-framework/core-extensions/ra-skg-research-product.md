@@ -6,7 +6,7 @@ layout: default
 nav_order: 2
 ---
 
-# (Extended) Research product
+# RA-SKG Research product
 
 The RA-SKG extension introduce metrics (i.e., indicators and badges) for [Research product].
 

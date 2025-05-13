@@ -3,6 +3,7 @@ title: Data model
 parent: RA-SKG
 layout: default
 nav_order: 2
+has_toc: false
 ---
 
 # RA-SKG data model

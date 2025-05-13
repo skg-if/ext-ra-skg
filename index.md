@@ -1,7 +1,7 @@
 ---
 title: RA-SKG
 layout: default
-nav_exclude: true
+# nav_exclude: true
 ---
 
 # RA-SKG extension

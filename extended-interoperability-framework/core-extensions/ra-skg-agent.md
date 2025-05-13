@@ -6,7 +6,7 @@ layout: default
 nav_order: 1
 ---
 
-# (Extended) Agent
+# RA-SKG Agent
 
 The RA-SKG extension introduce metrics (i.e., indicators and badges) for [Agent].
 
