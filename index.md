@@ -1,6 +1,7 @@
 ---
 title: RA-SKG
 layout: default
+parent: Extensions
 # nav_exclude: true
 ---
 
