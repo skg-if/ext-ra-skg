@@ -19,19 +19,19 @@ Each element of the list is structured as follow.
 - `ra_metric` *Object* (mandatory): The information about the provided metric. Metrics can be of two kinds:
   - **Scalar** indicating something countable (e.g., a citation count). In this case, `ra_metric` has the following properties:
     - `ra_measure` *Object* (mandatory): An object containing representing the scalar and its meaning.
-      - `class` *String* (mandatory): The URL of the class identifying the entity (e.g., in an ontology) describing that type.
-      - `labels` *Object* (mandatory): the labels describing the type (multiple for multilingualism). 
+      - `class` *String* (recommended): The URL of the class identifying the entity (e.g., in an ontology) describing that type.
+      - `labels` *Object* (recommended): the labels describing the type (multiple for multilingualism). 
     The object is a dictionary, the keys represent language codes following [ISO 639-1]; the special key `none` is reserved whenever the information about the language is not available or cannot be shared.
-      - `defined_in` *String* (mandatory): the URL of the schema of the manifestation type, e.g., a link to the vocabulary of allowed product types.
+      - `defined_in` *String* (optional): the URL of the schema of the manifestation type, e.g., a link to the vocabulary of allowed product types.
     - `ra_value` *String* (mandatory): the actual value of the metric.
   
   - **Badges** indicating a property or claim the [Research product] exhibits. In this case, `ra_metric` has the following properties:
-    - `class` *String* (mandatory): The URL of the class identifying the entity (e.g., in an ontology) describing that type.
-    - `labels` *Object* (mandatory): the labels describing the type (multiple for multilingualism). 
+    - `class` *String* (recommended): The URL of the class identifying the entity (e.g., in an ontology) describing that type.
+    - `labels` *Object* (recommended): the labels describing the type (multiple for multilingualism). 
     The object is a dictionary, the keys represent language codes following [ISO 639-1]; the special key `none` is reserved whenever the information about the language is not available or cannot be shared.
-    - `defined_in` *String* (mandatory): the URL of the schema of the manifestation type, e.g., a link to the vocabulary of allowed product types.
-- `ra_provider` *String* (mandatory): An [Agent] providing the metric.
-- `description` *String* (mandatory): A description of the metric.
+    - `defined_in` *String* (optional): the URL of the schema of the manifestation type, e.g., a link to the vocabulary of allowed product types.
+- `ra_provider` *String* (recommended): An [Agent] providing the metric.
+- `description` *String* (optional): A description of the metric.
 
 
 ```json

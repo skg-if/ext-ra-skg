@@ -1,0 +1,42 @@
+{
+    "@context": [
+        "https://w3id.org/skg-if/context/skg-if.json",
+        {
+            "@base": "https://w3id.org/skg-if/sandbox/oc/"
+        },
+        "https://w3id.org/skg-if/extension/ra-skg/context/skg-if.json"
+    ],
+    "@graph": [
+        {
+            "entity_type": "product",
+            "local_identifier": "https://w3id.org/oc/meta/br/062501777134",
+            "identifiers": [
+                {
+                    "scheme": "doi",
+                    "value": "10.1162/qss_a_00023"
+                }
+            ],
+            "product_type": "literature",
+            "titles": {
+                "none": "OpenCitations, An Infrastructure Organization For Open Scholarship"
+            },
+            "ra_metrics": [
+                {
+                    "ra_metric": {
+                        "ra_measure": {
+                        "class": "http://www.wikidata.org/entity/Q5122404",
+                        "labels": {
+                            "en": "publication citation count",
+                            "it": "conteggio delle citazioni ricevute dalla pubblicazione"
+                        },
+                        "defined_in": "http://www.wikidata.org/"
+                        },
+                        "ra_value": 86.0
+                    },
+                    "ra_provider": "https://ror.org/00wb4mk85",
+                    "description": "The total number of citations received by the article in consideration. Citation data required to calculate the particular indicator are gathered by OpenCitations Index (as of 14 May 2025)."
+                }
+            ]
+        }
+    ]
+}

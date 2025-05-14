@@ -18,20 +18,20 @@ The RA-SKG extension introduce metrics (i.e., indicators and badges) for [Agent]
 Each element of the list is structured as follow.
 - `ra_metric` *Object* (mandatory): The information about the provided metric. Metrics can be of two kinds:
   - **Scalar** indicating something countable (e.g., a citation count). In this case, `ra_metric` has the following properties:
-    - `ra_measure` *Object* (mandatory): An object containing representing the scalar and its meaning.
-      - `class` *String* (mandatory): The URL of the class identifying the entity (e.g., in an ontology) describing that type.
-      - `labels` *Object* (mandatory): the labels describing the type (multiple for multilingualism). 
+    - `ra_measure` *Object* (mandatory): An object representing the scalar and its meaning.
+      - `class` *String* (recommended): The URL of the class identifying the entity (e.g., in an ontology) describing that type.
+      - `labels` *Object* (recommended): the labels describing the type (multiple for multilingualism). 
     The object is a dictionary, the keys represent language codes following [ISO 639-1]; the special key `none` is reserved whenever the information about the language is not available or cannot be shared.
-      - `defined_in` *String* (mandatory): the URL of the schema of the manifestation type, e.g., a link to the vocabulary of allowed product types.
+      - `defined_in` *String* (optional): the URL of the schema of the manifestation type, e.g., a link to the vocabulary of allowed product types.
     - `ra_value` *String* (mandatory): the actual value of the metric.
   
   - **Badges** indicating a property or claim the [Research product] exhibits. In this case, `ra_metric` has the following properties:
-    - `class` *String* (mandatory): The URL of the class identifying the entity (e.g., in an ontology) describing that type.
-    - `labels` *Object* (mandatory): the labels describing the type (multiple for multilingualism). 
+    - `class` *String* (recommended): The URL of the class identifying the entity (e.g., in an ontology) describing that type.
+    - `labels` *Object* (recommended): the labels describing the type (multiple for multilingualism). 
     The object is a dictionary, the keys represent language codes following [ISO 639-1]; the special key `none` is reserved whenever the information about the language is not available or cannot be shared.
-    - `defined_in` *String* (mandatory): the URL of the schema of the manifestation type, e.g., a link to the vocabulary of allowed product types.
-- `ra_provider` *String* (mandatory): An [Agent] providing the metric.
-- `description` *String* (mandatory): A description of the metric.
+    - `defined_in` *String* (optional): the URL of the schema of the manifestation type, e.g., a link to the vocabulary of allowed product types.
+- `ra_provider` *String* (recommended): An [Agent] providing the metric.
+- `description` *String* (optional): A description of the metric.
 
 
 ```json
@@ -60,11 +60,13 @@ Each element of the list is structured as follow.
 *List* (recommended): A collection of narrative profiles for an [Agent] (applies only if the `entity_type` of an  [Agent] is `person`) that can support an evaluation. 
 
 Each element of the list is structured as follows:
-- `title` *String* (mandatory): the title of the narrative profile.
-- `ra_sections` *List* (mandatory): Sections composing the narrative. Each section has the following properties:
-    - `title` *String* (mandatory): Title of the section
-    - `content` *String* (mandatory): Content of the section
-    - `cites` *List* (mandatory): [Research products] the section is referring to.
+- `title` *String* (recommended): the title of the narrative profile.
+- `ra_sections` *List* (recommended): Sections composing the narrative. Each section has the following properties:
+    - `title` *String* (recommended): Title of the section
+    - `description` *String* (optional): Description, e.g. containing guidelines, of what is expected as content of the section
+    - `ra_content` *String* (optional): Content of the section
+    - `cites` *List* (optional): [Research products] the section is referring to.
+- `ra_template` *String* (optional): the URL of the template that is used to create the CV.
 
 
 ```json
@@ -74,11 +76,13 @@ Each element of the list is structured as follows:
 		"ra_sections": [
 			{
 				"title": "Ethical AI Models in Biochemical Research",
+        "description": "Maximum 1000 words",
 				"content": "As artificial intelligence (AI) becomes integral to ...",
 				"cites": ["product_1", "product_2"]	
 			},
 			{
 				"title": "Exploring the Duality of Molecular Systems for Drug Design",
+        "description": "Maximum 1000 words",
 				"content": "The complexity of molecular behavior in biological ...",
 				"cites": ["product_3", "product_4"]	
 			}		

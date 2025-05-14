@@ -1,0 +1,59 @@
+{
+    "@context": [
+        "https://w3id.org/skg-if/context/skg-if.json",
+        {
+            "@base": "https://w3id.org/skg-if/sandbox/oc/"
+        },
+        "https://w3id.org/skg-if/extension/ra-skg/context/skg-if.json"
+    ],
+    "@graph": [
+        {
+            "local_identifier": "https://w3id.org/oc/meta/ra/0614010840729",
+            "identifiers": [
+                {
+                    "scheme": "orcid",
+                    "value": "0000-0003-0530-4305"
+                }
+            ],
+            "entity_type": "person",
+            "given_name": "Silvio",
+            "family_name": "Peroni",
+            "ra_metrics": [
+                {
+                    "ra_metric": {
+                        "ra_measure": {
+                        "class": "http://purl.org/spar/bido/author-citation-count",
+                        "labels": {
+                            "en": "author citation count",
+                            "it": "conteggio delle citazioni ricevute dall'autore"
+                        },
+                        "defined_in": "http://purl.org/spar/bido-standard-bibliometric-measures"
+                        },
+                        "ra_value": 4771.0
+                    },
+                    "ra_provider": "https://scholar.google.com",
+                    "description": "The total number of citations received by all articles of the researcher of interest. All publication records are those included in Google Scholar as of 14 May 2025."
+                }
+            ],
+            "ra_profiles" : [
+                {
+                    "title": "Silvio Peroni CV",
+                    "ra_sections": [
+                        {
+                            "title": "Brief biography",
+                            "description": "A brief biography of the researcher (max. 500 characters)",
+                            "content": "Silvio Peroni holds a Ph.D. degree in Computer Science, and he is an Associate Professor at the Department of Classical Philology and Italian Studies, University of Bologna. He is the director of OpenCitations (https://opencitations.net) and an expert in Semantic Web technologies, semantic interoperability of Open Science services and infrastructures, bibliographic information and cultural heritage data."
+                        },
+                        {
+                            "title": "Publications",
+                            "cites": [ 
+                                "https://w3id.org/oc/meta/br/062501778099" , 
+                                "https://w3id.org/oc/meta/br/0626055628"
+                            ]	
+                        }		
+                    ]
+                }
+            ]
+        }
+    ]
+}
