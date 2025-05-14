@@ -77,13 +77,13 @@ Each element of the list is structured as follows:
 			{
 				"title": "Ethical AI Models in Biochemical Research",
         "description": "Maximum 1000 words",
-				"content": "As artificial intelligence (AI) becomes integral to ...",
+				"ra_content": "As artificial intelligence (AI) becomes integral to ...",
 				"cites": ["product_1", "product_2"]	
 			},
 			{
 				"title": "Exploring the Duality of Molecular Systems for Drug Design",
         "description": "Maximum 1000 words",
-				"content": "The complexity of molecular behavior in biological ...",
+				"ra_content": "The complexity of molecular behavior in biological ...",
 				"cites": ["product_3", "product_4"]	
 			}		
 		]
