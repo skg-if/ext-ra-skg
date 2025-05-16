@@ -10,7 +10,7 @@ has_toc: false
 
 ## Core extensions
 RA-SKG extends these core entities:
-- [RA-SKG research product] (extending the core [Research product])
+- [RA-SKG Research product] (extending the core [Research product])
 - [RA-SKG Agent] (extending the core [Agent])
 
 
