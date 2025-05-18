@@ -2,7 +2,7 @@
 title: Data model
 parent: RA-SKG
 layout: default
-nav_order: 2
+nav_order: 3
 has_toc: false
 ---
 
