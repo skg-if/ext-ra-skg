@@ -31,6 +31,8 @@
         "ra_profiles": { "@reverse": "cv:aboutPerson", "@type": "@vocab"  },
         "ra_discipline": { "@id": "tvc:withinContext", "@type": "@vocab"  },
         "ra_value": { "@id": "bido:hasNumericValue", "@type": "@vocab"  },
-        "ra_content": { "@id": "c4o:hasContent", "@type": "@vocab"  }
+        "ra_content": { "@id": "c4o:hasContent", "@type": "@vocab"  },
+
+        "ra_category": "@nest"
     }
 }

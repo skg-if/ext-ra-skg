@@ -21,15 +21,16 @@ Each element of the list is structured as follow.
     - `ra_measure` *Object* (mandatory): An object representing the scalar and its meaning.
       - `class` *String* (recommended): The URL of the class identifying the entity (e.g., in an ontology) describing that type.
       - `labels` *Object* (recommended): the labels describing the type (multiple for multilingualism). 
-    The object is a dictionary, the keys represent language codes following [ISO 639-1]; the special key `none` is reserved whenever the information about the language is not available or cannot be shared.
-      - `defined_in` *String* (optional): the URL of the schema of the manifestation type, e.g., a link to the vocabulary of allowed product types.
+        The object is a dictionary, the keys represent language codes following [ISO 639-1]; the special key `none` is reserved whenever the information about the language is not available or cannot be shared.
+      - `defined_in` *String* (optional): the URL of the schema defining the metric type used.
     - `ra_value` *String* (mandatory): the actual value of the metric.
   
-  - **Badges** indicating a property or claim the [Research product] exhibits. In this case, `ra_metric` has the following properties:
-    - `class` *String* (recommended): The URL of the class identifying the entity (e.g., in an ontology) describing that type.
-    - `labels` *Object* (recommended): the labels describing the type (multiple for multilingualism). 
-    The object is a dictionary, the keys represent language codes following [ISO 639-1]; the special key `none` is reserved whenever the information about the language is not available or cannot be shared.
-    - `defined_in` *String* (optional): the URL of the schema of the manifestation type, e.g., a link to the vocabulary of allowed product types.
+  - **Badges** indicating a property or claim the [Agent] exhibits. In this case, `ra_metric` has the following properties:
+    - `ra_category` *Object* (mandatory): An object representing the badge and its meaning.
+      - `class` *String* (recommended): The URL of the class identifying the entity (e.g., in an ontology) describing that type.
+      - `labels` *Object* (recommended): the labels describing the type (multiple for multilingualism). 
+        The object is a dictionary, the keys represent language codes following [ISO 639-1]; the special key `none` is reserved whenever the information about the language is not available or cannot be shared.
+      - `defined_in` *String* (optional): the URL of the schema defining the metric type used.
 - `ra_provider` *String* (recommended): An [Agent] providing the metric.
 - `description` *String* (optional): A description of the metric.
 

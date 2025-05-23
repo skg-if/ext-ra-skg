@@ -1,7 +1,38 @@
 {
     "@context": {
-        "@version": 1.1
+        "@version": 1.1,
+        "@protected": true,
 
-        
+        "bido": "http://purl.org/spar/bido/",
+        "cv": "http://rdfs.org/resume-rdf/",
+        "c4o": "http://purl.org/spar/c4o/",
+        "datacite": "http://purl.org/spar/datacite/",
+        "dcterms": "http://purl.org/dc/terms/",
+        "frbr": "http://purl.org/vocab/frbr/core#",
+        "scoro": "http://purl.org/spar/scoro/",
+        "tvc": "http://www.essepuntato.it/2012/04/tvc/",
+
+        "ra_github": "datacite:github",
+        "ra_collects_data": "scoro:collects-data",
+        "ra_design_experiments": "scoro:design-experiments",
+        "ra_performs_experiments": "scoro:performs-experiments",
+        "ra_prepares_suppl_info": "scoro:prepares-supplementary-information",
+        "ra_pi": "scoro:principal-investigator",
+        "ra_provides_data": "scoro:provides-existing-data",
+        "ra_provides_software": "scoro:provides-software",
+        "ra_modelling": "scoro:undertakes-modelling",
+
+        "ra_template": { "@id": "dcterms:conformsTo", "@type": "@vocab"  },
+        "ra_provider": { "@id": "bido:accordingTo", "@type": "@vocab"  },
+        "ra_measure": { "@id": "bido:hasMeasure", "@type": "@vocab"  },
+        "ra_metrics": { "@id": "bido:holdsBibliometricDataInTime", "@type": "@vocab"  },
+        "ra_metric": { "@id": "bido:withBibliometricData", "@type": "@vocab"  },
+        "ra_sections": { "@id": "frbr:part", "@type": "@vocab"  },
+        "ra_profiles": { "@reverse": "cv:aboutPerson", "@type": "@vocab"  },
+        "ra_discipline": { "@id": "tvc:withinContext", "@type": "@vocab"  },
+        "ra_value": { "@id": "bido:hasNumericValue", "@type": "@vocab"  },
+        "ra_content": { "@id": "c4o:hasContent", "@type": "@vocab"  },
+
+        "ra_category": "@nest"
     }
 }

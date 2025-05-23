@@ -24,17 +24,45 @@
                 {
                     "ra_metric": {
                         "ra_measure": {
-                        "class": "http://www.wikidata.org/entity/Q5122404",
-                        "labels": {
-                            "en": "publication citation count",
-                            "it": "conteggio delle citazioni ricevute dalla pubblicazione"
-                        },
-                        "defined_in": "http://www.wikidata.org/"
+                            "class": "http://www.wikidata.org/entity/Q5122404",
+                            "labels": {
+                                "en": "publication citation count",
+                                "it": "conteggio delle citazioni ricevute dalla pubblicazione"
+                            },
+                            "defined_in": "http://www.wikidata.org/"
                         },
                         "ra_value": 86.0
                     },
                     "ra_provider": "https://ror.org/00wb4mk85",
                     "description": "The total number of citations received by the article in consideration. Citation data required to calculate the particular indicator are gathered by OpenCitations Index (as of 14 May 2025)."
+                }
+            ]
+        },
+        {
+            "entity_type": "product",
+            "local_identifier": "https://w3id.org/oc/meta/br/06204376835",
+            "identifiers": [
+                {
+                    "scheme": "doi",
+                    "value": "10.1017/aap.2022.35"
+                }
+            ],
+            "product_type": "literature",
+            "titles": {
+                "none": "Machine Learning–Based Identification Of Lithic Microdebitage"
+            },
+            "ra_metrics": [
+                {
+                    "ra_metric": {
+                        "ra_category": {
+                            "class": "http://www.wikidata.org/entity/Q309901",
+                            "labels": {
+                                "en": "open data"
+                            },
+                            "defined_in": "http://www.wikidata.org/"
+                        }
+                    },
+                    "description": "The 'open data' badge provided by the journal to the article, that is part of an initiative coordinated by the Centre for Open Science related to Open Science budges - see https://www.cos.io/initiatives/badges."
                 }
             ]
         }

@@ -22,12 +22,12 @@
                 {
                     "ra_metric": {
                         "ra_measure": {
-                        "class": "http://purl.org/spar/bido/author-citation-count",
-                        "labels": {
-                            "en": "author citation count",
-                            "it": "conteggio delle citazioni ricevute dall'autore"
-                        },
-                        "defined_in": "http://purl.org/spar/bido-standard-bibliometric-measures"
+                            "class": "http://purl.org/spar/bido/author-citation-count",
+                            "labels": {
+                                "en": "author citation count",
+                                "it": "conteggio delle citazioni ricevute dall'autore"
+                            },
+                            "defined_in": "http://purl.org/spar/bido-standard-bibliometric-measures"
                         },
                         "ra_value": 4771.0
                     },
