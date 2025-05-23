@@ -72,23 +72,23 @@ Each element of the list is structured as follows:
 
 ```json
 "ra_profiles" : [
-	{
-		"title": "John Doe CV",
-		"ra_sections": [
-			{
-				"title": "Ethical AI Models in Biochemical Research",
+  {
+    "title": "John Doe CV",
+    "ra_sections": [
+      {
+        "title": "Ethical AI Models in Biochemical Research",
         "description": "Maximum 1000 words",
-				"ra_content": "As artificial intelligence (AI) becomes integral to ...",
-				"cites": ["product_1", "product_2"]	
-			},
-			{
-				"title": "Exploring the Duality of Molecular Systems for Drug Design",
+        "ra_content": "As artificial intelligence (AI) becomes integral to ...",
+        "cites": ["product_1", "product_2"]	
+      },
+      {
+        "title": "Exploring the Duality of Molecular Systems for Drug Design",
         "description": "Maximum 1000 words",
-				"ra_content": "The complexity of molecular behavior in biological ...",
-				"cites": ["product_3", "product_4"]	
-			}		
-		]
-	}
+        "ra_content": "The complexity of molecular behavior in biological ...",
+        "cites": ["product_3", "product_4"]	
+      }
+    ]
+  }
 ]
 ```
 ----
