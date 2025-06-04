@@ -10,7 +10,7 @@ has_toc: false
 
 The RA-SKG Data Model is the metadata model used for the data compliant with the [RA-SKG extension of the SKG-IF]({% link ext-ra-skg/extended-interoperability-framework/ra-skg-if.md %}).
 
-The RA-SKG Data Model is used to model extends the SKG-IF Data Model with additional classes,their attributes and their relations to other entities. All these aspects are implemented using the 'language' of the Semantic Web, in particular by re-employing several existing ontological models developed to address specific modelling scenarios compatible with the aims of this extension. 
+The RA-SKG Data Model is used to model extends the SKG-IF Data Model with additional classes, their attributes and their relations to other entities. All these aspects are implemented using the 'language' of the Semantic Web, in particular by re-employing several existing ontological models developed to address specific modelling scenarios compatible with the aims of this extension. 
 
 The RA-SKG Data Model, summarised in the following [Graffoo diagrams](https://essepuntato.it/graffoo), allows one to record information which are required for research assessment use cases, as well as their relationships with well-established entities of the scholarly communication domain. Examples of such entities are research performance indicators, which are used to support various research evaluation processes, and narrative CVs, which are texts presenting the overarching story of one or more research products usually related to an entity of interest.
 
