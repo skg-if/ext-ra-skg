@@ -1,0 +1,135 @@
+overlay: 1.0.0
+info:
+  title: The service extension
+  version: 1.0.0
+actions:
+  - target: $.components.schemas
+    update:
+      ra_metric:
+        type: object
+        description: 'The information about the provided metric'
+        properties:
+          ra_metric:
+            oneOf:
+              - $ref: '#/components/schemas/ra_scalar_metric'
+              - $ref: '#/components/schemas/ra_badge_metric'
+          ra_provider:
+            type: string
+            description: 'An Agent providing the metric.'
+            example: "agent_2"
+          description:
+            type: string
+            description: 'A description of the metric.'
+            example: "The total number of citations received by the article in consideration. Citations and article metadata required to calculate the particular indicator are gathered by OpenCitations Index and OpenCitations Meta."
+  - target: $.components.schemas
+    update:
+      ra_scalar_metric:
+        type: object
+        description: 'Scalar indicates something countable (e.g., a citation count)'
+        required:
+          - ra_measure
+          - ra_value
+        properties:
+          ra_measure:
+            description: 'An object representing the scalar and its meaning'
+            $ref: '#/components/schemas/ra_measure_or_category'
+          ra_value:
+            type: number
+            example: 125.0
+  - target: $.components.schemas
+    update:
+      ra_badge_metric:
+        type: object
+        description: 'Badges indicate a property or claim the Research product exhibits'
+        required:
+          - ra_category
+        properties:
+          ra_category:
+            description: 'An object representing the badge and its meaning'
+            $ref: '#/components/schemas/ra_measure_or_category'
+  - target:  $.components.schemas
+    update:
+      ra_measure_or_category:
+        type: object
+        properties:
+          class:
+            type: string
+            description: 'URI of the class (e.g., in an ontology) that defines this metric.'
+            format: uri
+            example: "http://www.wikidata.org/entity/Q5122404"
+          labels:
+            type: object
+            description: 'Multilingual labels for the metric; keys are language codes (ISO-639-1) or "none".'
+            patternProperties:
+              "^([a-z]{2}|none)$":
+                type: array
+                items:
+                  type: string
+          defined_in:
+            type: string
+            description: 'URI of the schema or vocabulary where the metric is defined.'
+            format: uri
+            example: "http://www.wikidata.org/"
+  - target: $.components.schemas
+    update:
+      ra_profile:
+        type: object
+        properties:
+          title:
+            type: string
+            description: 'The title of the narrative profile.'
+            example: 'John Doe CV'
+          ra_sections:
+            type: array
+            description: 'Sections composing the narrative.'
+            items:
+              $ref: '#/components/schemas/ra_section'
+  - target: $.components.schemas
+    update:
+      ra_section:
+        type: object
+        properties:
+          title:
+            type: string
+            description: 'Title of the section'
+            example: 'Ethical AI Models in Biochemical Research'
+          description:
+            type: string
+            description: 'Description, e.g. containing guidelines, of what is expected as content of the section'
+            example: 'Maximum 1000 words'
+          ra_content:
+            type: string
+            description: 'Content of the section'
+            example: 'As artificial intelligence (AI) becomes integral to ...'
+          cites:
+            type: array
+            description: 'Research products the section is referring to.'
+            items:
+              type: string
+              example: 'product_1'
+          ra_template:
+            type: string
+            description: 'The URL of the template that is used to create the CV.'
+            format: uri
+            example: 'https://example.com/template/cv'
+   
+  - target: $.components.schemas.Product.allOf[1].properties
+    update:
+      ra_metrics:
+        type: array
+        description: 'A collection of metrics available for a Research product.'
+        items:
+          $ref: '#/components/schemas/ra_metric'
+  - target: $.components.schemas.Person.allOf[1].properties
+    update:
+      ra_metrics:
+        type: array
+        description: 'A collection of metrics available for the Research products of a Person.'
+        items:
+          $ref: '#/components/schemas/ra_metric'
+      ra_profiles:
+        type: array
+        description: 'A collection of narrative profiles for an Agent that can support an evaluation.'
+        items:
+          $ref: '#/components/schemas/ra_profile'
+
