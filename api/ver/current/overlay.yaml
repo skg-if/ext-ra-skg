@@ -84,6 +84,12 @@ actions:
             description: 'Sections composing the narrative.'
             items:
               $ref: '#/components/schemas/ra_section'
+          ra_template:
+            type: string
+            description: 'The URL of the template that is used to create the CV.'
+            format: uri
+            example: 'https://example.com/template/cv'
+            
   - target: $.components.schemas
     update:
       ra_section:
@@ -107,11 +113,6 @@ actions:
             items:
               type: string
               example: 'product_1'
-          ra_template:
-            type: string
-            description: 'The URL of the template that is used to create the CV.'
-            format: uri
-            example: 'https://example.com/template/cv'
    
   - target: $.components.schemas.Product.allOf[1].properties
     update:
