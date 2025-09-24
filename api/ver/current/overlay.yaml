@@ -75,7 +75,7 @@ actions:
       ra_profile:
         type: object
         properties:
-          title:
+          ra_title:
             type: string
             description: 'The title of the narrative profile.'
             example: 'John Doe CV'
@@ -95,7 +95,7 @@ actions:
       ra_section:
         type: object
         properties:
-          title:
+          ra_title:
             type: string
             description: 'Title of the section'
             example: 'Ethical AI Models in Biochemical Research'

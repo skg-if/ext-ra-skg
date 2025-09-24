@@ -84,8 +84,8 @@ These filters aren not properties of the [RA-SKG Agent], but they are useful for
 
 | Filter name                | Description                                                                                                                                                                        |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `cf.search.ra_profiles.title`       | Keyword or phrase search in the titles of the `ra_profiles`.                                                                                             |
-| `cf.search.ra_profiles.ra_sections.title`       | Keyword or phrase search in the section titles of the `ra_profiles`.                                                                                                   |
+| `cf.search.ra_profiles.ra_title`       | Keyword or phrase search in the titles of the `ra_profiles`.                                                                                             |
+| `cf.search.ra_profiles.ra_sections.ra_title`       | Keyword or phrase search in the section titles of the `ra_profiles`.                                                                                                   |
 | `cf.search.ra_profiles.ra_sections.description` | Keyword or phrase search in the section descriptions of the `ra_profiles`, e.g., to find those with specific thematic focus.     |
 | `cf.search.ra_profiles.ra_sections.ra_content`    | Keyword or phrase search in the content of all sections of the `ra_profiles`.                                                                   |
 

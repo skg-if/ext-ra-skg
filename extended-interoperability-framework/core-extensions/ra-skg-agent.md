@@ -61,9 +61,9 @@ Each element of the list is structured as follow.
 *List* (recommended): A collection of narrative profiles for an [Agent] (applies only if the `entity_type` of an  [Agent] is `person`) that can support an evaluation. 
 
 Each element of the list is structured as follows:
-- `title` *String* (recommended): the title of the narrative profile.
+- `ra_title` *String* (recommended): the title of the narrative profile.
 - `ra_sections` *List* (recommended): Sections composing the narrative. Each section has the following properties:
-    - `title` *String* (recommended): Title of the section
+    - `ra_title` *String* (recommended): Title of the section
     - `description` *String* (optional): Description, e.g. containing guidelines, of what is expected as content of the section
     - `ra_content` *String* (optional): Content of the section
     - `cites` *List* (optional): [Research products] the section is referring to.

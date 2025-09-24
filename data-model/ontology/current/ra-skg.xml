@@ -123,7 +123,7 @@
   <rdf:Description rdf:about="http://purl.org/dc/terms/title">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-    <rdfs:label>dcterms:title (SKG-IF labels: title)</rdfs:label>
+    <rdfs:label>dcterms:title (SKG-IF labels: ra_title)</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/spar/scoro/undertakes-modelling">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>

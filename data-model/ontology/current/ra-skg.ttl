@@ -44,7 +44,7 @@ dcterms:description a owl:DatatypeProperty ;
     rdfs:isDefinedBy dcterms: .
 
 dcterms:title a owl:DatatypeProperty ;
-    rdfs:label "dcterms:title (SKG-IF labels: title)" ;
+    rdfs:label "dcterms:title (SKG-IF labels: ra_title)" ;
     rdfs:isDefinedBy dcterms: .
 
 bido:BibliometricData a owl:Class ;

@@ -838,7 +838,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "dcterms:title (SKG-IF labels: title)"
+        "@value": "dcterms:title (SKG-IF labels: ra_title)"
       }
     ]
   },

@@ -12,6 +12,7 @@
         "scoro": "http://purl.org/spar/scoro/",
         "tvc": "http://www.essepuntato.it/2012/04/tvc/",
 
+        "ra_title": "dcterms:title",
         "ra_github": "datacite:github",
         "ra_collects_data": "scoro:collects-data",
         "ra_design_experiments": "scoro:design-experiments",

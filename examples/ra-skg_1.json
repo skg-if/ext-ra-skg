@@ -37,15 +37,15 @@
             ],
             "ra_profiles" : [
                 {
-                    "title": "Silvio Peroni CV",
+                    "ra_title": "Silvio Peroni CV",
                     "ra_sections": [
                         {
-                            "title": "Brief biography",
+                            "ra_title": "Brief biography",
                             "description": "A brief biography of the researcher (max. 500 characters)",
                             "content": "Silvio Peroni holds a Ph.D. degree in Computer Science, and he is an Associate Professor at the Department of Classical Philology and Italian Studies, University of Bologna. He is the director of OpenCitations (https://opencitations.net) and an expert in Semantic Web technologies, semantic interoperability of Open Science services and infrastructures, bibliographic information and cultural heritage data."
                         },
                         {
-                            "title": "Publications",
+                            "ra_title": "Publications",
                             "cites": [ 
                                 "https://w3id.org/oc/meta/br/062501778099" , 
                                 "https://w3id.org/oc/meta/br/0626055628"
